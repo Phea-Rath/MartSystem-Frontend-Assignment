@@ -146,21 +146,21 @@ const SupplierList = () => {
                 onCancel={() => setIsOpen(false)}
             />
 
-            <div className="p-6 mx-auto">
+            <div className="p-3 sm:p-6 mx-auto max-w-full">
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-3 sm:gap-4">
                     <div>
-                        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Suppliers</h1>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Manage your vendor relationships ({suppliers?.total || 0} total)</p>
+                        <h1 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">Suppliers</h1>
+                        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Manage your vendor relationships ({suppliers?.total || 0} total)</p>
                     </div>
-                    <button onClick={handleAddNew} className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors shadow-sm font-semibold">
+                    <button onClick={handleAddNew} className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-800 text-white px-3 sm:px-4 py-2 rounded-lg transition-colors shadow-sm font-semibold text-sm sm:text-base w-full sm:w-auto">
                         <FaPlus size={14} />
                         <span>Add Supplier</span>
                     </button>
                 </div>
 
-                {/* Table */}
-                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                {/* Desktop Table */}
+                <div className="hidden md:block bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                             <thead>
@@ -204,10 +204,10 @@ const SupplierList = () => {
                                             </td>
                                             <td className="px-6 py-4">
                                                 <div className="flex justify-end gap-2">
-                                                    <button onClick={() => handleEdit(item)} className="p-2 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-colors border border-transparent hover:border-blue-100 dark:hover:border-blue-700">
+                                                    <button onClick={() => handleEdit(item)} className="p-2 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-colors border border-transparent hover:border-blue-100 dark:hover:border-blue-700 dark:hover:bg-gray-700">
                                                         <FaEdit size={16} />
                                                     </button>
-                                                    <button onClick={() => { setDelId(item.supplier_id); setIsOpen(true); }} className="p-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-gray-700 rounded-lg transition-colors border border-transparent hover:border-red-100 dark:hover:border-red-700">
+                                                    <button onClick={() => { setDelId(item.supplier_id); setIsOpen(true); }} className="p-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-gray-700 rounded-lg transition-colors border border-transparent hover:border-red-100 dark:hover:border-red-700 dark:hover:bg-gray-700">
                                                         <FaTrash size={16} />
                                                     </button>
                                                 </div>
@@ -239,6 +239,71 @@ const SupplierList = () => {
                             ))}
                         </div>
                     </div>
+                </div>
+
+                {/* Mobile Card View */}
+                <div className="md:hidden space-y-3">
+                    {!isPending && suppliers?.data?.map((item) => (
+                        <div key={item.supplier_id} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
+                            <div className="flex items-start gap-3 mb-4">
+                                <div className="p-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg">
+                                    <FaTruck size={16} />
+                                </div>
+                                <div className="flex-1">
+                                    <p className="font-semibold text-gray-800 dark:text-white">{item.supplier_name}</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400">ID: #{item.supplier_id}</p>
+                                </div>
+                            </div>
+                            <div className="mb-4 pb-4 border-b border-gray-200 dark:border-gray-700 space-y-2">
+                                <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+                                    <FaPhoneAlt size={12} className="text-gray-400 dark:text-gray-500" />
+                                    <span>{item.phone_number || 'N/A'}</span>
+                                </div>
+                                <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+                                    <FaEnvelope size={12} className="text-gray-400 dark:text-gray-500" />
+                                    <span>{item.email || 'N/A'}</span>
+                                </div>
+                                <div className="flex items-start gap-2 text-xs text-gray-600 dark:text-gray-400">
+                                    <FaMapMarkerAlt size={12} className="text-red-400 dark:text-red-500 mt-0.5 flex-shrink-0" />
+                                    <span className="line-clamp-1">{item.address || 'No address'}</span>
+                                </div>
+                            </div>
+                            <div className="flex gap-2">
+                                <button
+                                    onClick={() => handleEdit(item)}
+                                    className="flex-1 flex items-center justify-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 p-2 rounded-lg text-xs font-medium transition-colors hover:bg-blue-100 dark:hover:bg-blue-900/50"
+                                >
+                                    <FaEdit size={14} />
+                                    <span>Edit</span>
+                                </button>
+                                <button
+                                    onClick={() => { setDelId(item.supplier_id); setIsOpen(true); }}
+                                    className="flex-1 flex items-center justify-center gap-2 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 p-2 rounded-lg text-xs font-medium transition-colors hover:bg-red-100 dark:hover:bg-red-900/50"
+                                >
+                                    <FaTrash size={14} />
+                                    <span>Delete</span>
+                                </button>
+                            </div>
+                        </div>
+                    ))}
+
+                    {/* Mobile Pagination */}
+                    {suppliers?.links && (
+                        <div className="flex gap-1 justify-center mt-4">
+                            {suppliers?.links.map((link, index) => (
+                                <button
+                                    key={index}
+                                    disabled={!link.url || link.active}
+                                    onClick={() => handlePageChange(link.url)}
+                                    className={`px-2 py-1 rounded border text-xs transition-all ${link.active
+                                        ? 'bg-indigo-600 text-white border-indigo-600'
+                                        : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 disabled:opacity-50'
+                                        }`}
+                                    dangerouslySetInnerHTML={{ __html: link.label }}
+                                />
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
 

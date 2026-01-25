@@ -196,22 +196,22 @@ const BrandList = () => {
                 onConfirm={handleAction}
                 onCancel={() => setIsOpen(false)}
             />
-            <div className=" p-6 mx-auto">
+            <div className="p-3 sm:p-6 mx-auto max-w-full">
 
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-3 sm:gap-4">
                     <div>
-                        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Categories</h1>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Manage your product classifications ({brands?.total} total)</p>
+                        <h1 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">Brands</h1>
+                        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Manage your brands ({brands?.total} total)</p>
                     </div>
-                    <button onClick={() => setShowForm(true)} className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors shadow-sm">
+                    <button onClick={() => setShowForm(true)} className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-800 text-white px-3 sm:px-4 py-2 rounded-lg transition-colors shadow-sm text-sm sm:text-base w-full sm:w-auto">
                         <FaPlus size={14} />
                         <span>Add Brand</span>
                     </button>
                 </div>
 
-                {/* Table Container */}
-                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                {/* Desktop Table View */}
+                <div className="hidden md:block bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                             <thead>
@@ -241,48 +241,103 @@ const BrandList = () => {
                                         </td>
                                         <td className="px-6 py-4">
                                             <div className="flex justify-end gap-2">
-                                                <button onClick={() => handleEdit(brand)} className="p-2 text-blue-600 hover:bg-blue-50 rounded-md transition-colors" title="Edit">
-                                                    <FaEdit size={16} />
-                                                </button>
-                                                <button onClick={() => handleDel(brand.brand_id)} className="p-2 text-red-600 hover:bg-red-50 rounded-md transition-colors" title="Delete">
-                                                    <FaTrash size={16} />
-                                                </button>
-                                            </div>
+                                                <button onClick={() => handleEdit(brand)} className=\"p-2 text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700 dark:hover:bg-gray-700 rounded-md transition-colors\" title=\"Edit\">
+                                                <FaEdit size={16} />
+                                            </button>
+                                            <button onClick={() => handleDel(brand.brand_id)} className=\"p-2 text-red-600 hover:bg-red-50 dark:hover:bg-gray-700 dark:hover:bg-gray-700 rounded-md transition-colors\" title=\"Delete\">
+                                            <FaTrash size={16} />
+                                        </button>
+                                    </div>
                                         </td>
                                     </tr>
                                 ))}
-                            </tbody>}
-                        </table>
-                    </div>
+                    </tbody>}
+                </table>
+            </div>
 
-                    {/* Pagination Footer */}
-                    <div className="px-6 py-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-600 flex items-center justify-between">
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
-                            Showing <span className="font-semibold">{brands?.data.length}</span> results
-                        </p>
-                        <div className="flex gap-1">
-                            {brands?.links.map((link, index) => (
-                                <button
-                                    key={index}
-                                    disabled={!link.url || link.active}
-                                    onClick={() => handlePageChange(link.url)}
-                                    className={`px-3 py-1 rounded border text-sm transition-all ${link.active
-                                        ? 'bg-indigo-600 text-white border-indigo-600'
-                                        : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 disabled:opacity-50'
-                                        }`}
-                                    dangerouslySetInnerHTML={{ __html: link.label }}
-                                />
-                            ))}
-                        </div>
-
-                    </div>
+            {/* Pagination Footer */}
+            <div className="px-6 py-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-600 flex items-center justify-between">
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                    Showing <span className="font-semibold">{brands?.data.length}</span> results
+                </p>
+                <div className="flex gap-1">
+                    {brands?.links.map((link, index) => (
+                        <button
+                            key={index}
+                            disabled={!link.url || link.active}
+                            onClick={() => handlePageChange(link.url)}
+                            className={`px-3 py-1 rounded border text-sm transition-all ${link.active
+                                ? 'bg-indigo-600 text-white border-indigo-600'
+                                : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 disabled:opacity-50'
+                                }`}
+                            dangerouslySetInnerHTML={{ __html: link.label }}
+                        />
+                    ))}
                 </div>
 
             </div>
-            <div className={`absolute w-full h-full top-0 bg-black/50 flex items-center justify-center transition-all duration-300 ${showForm ? '' : 'hidden'}`}>
-                <BrandForm data={dataEdit} onSave={''} onCancel={() => setShowForm(false)} />
-            </div>
         </div>
+
+                {/* Mobile Card View */ }
+    <div className="md:hidden space-y-3">
+        {!isPending && brands?.data?.map((brand) => (
+            <div key={brand.brand_id} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
+                <div className="flex items-start gap-3 mb-4">
+                    <div className="p-2 bg-indigo-50 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 rounded-lg">
+                        <FaFolder size={16} />
+                    </div>
+                    <div className="flex-1">
+                        <p className="font-semibold text-gray-800 dark:text-white">{brand.brand_name}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">ID: #{brand.brand_id}</p>
+                    </div>
+                </div>
+                <div className="mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                        Created: {new Date(brand.created_at).toLocaleDateString()}
+                    </p>
+                </div>
+                <div className="flex gap-2">
+                    <button
+                        onClick={() => handleEdit(brand)}
+                        className="flex-1 flex items-center justify-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 p-2 rounded-lg text-xs font-medium transition-colors hover:bg-blue-100 dark:hover:bg-blue-900/50"
+                    >
+                        <FaEdit size={14} />
+                        <span>Edit</span>
+                    </button>
+                    <button
+                        onClick={() => handleDel(brand.brand_id)}
+                        className="flex-1 flex items-center justify-center gap-2 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 p-2 rounded-lg text-xs font-medium transition-colors hover:bg-red-100 dark:hover:bg-red-900/50"
+                    >
+                        <FaTrash size={14} />
+                        <span>Delete</span>
+                    </button>
+                </div>
+            </div>
+        ))}
+
+        {/* Mobile Pagination */}
+        {brands?.links && (
+            <div className="flex gap-1 justify-center mt-4">
+                {brands?.links.map((link, index) => (
+                    <button
+                        key={index}
+                        disabled={!link.url || link.active}
+                        onClick={() => handlePageChange(link.url)}
+                        className={`px-2 py-1 rounded border text-xs transition-all ${link.active
+                            ? 'bg-indigo-600 text-white border-indigo-600'
+                            : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 disabled:opacity-50'
+                            }`}
+                        dangerouslySetInnerHTML={{ __html: link.label }}
+                    />
+                ))}
+            </div>
+        )}
+    </div>
+            </div >
+    <div className={`absolute w-full h-full top-0 bg-black/50 flex items-center justify-center transition-all duration-300 ${showForm ? '' : 'hidden'}`}>
+        <BrandForm data={dataEdit} onSave={''} onCancel={() => setShowForm(false)} />
+    </div>
+        </div >
     );
 };
 
