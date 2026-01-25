@@ -241,10 +241,10 @@ const BrandList = () => {
                                         </td>
                                         <td className="px-6 py-4">
                                             <div className="flex justify-end gap-2">
-                                                <button onClick={() => handleEdit(brand)} className=\"p-2 text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700 dark:hover:bg-gray-700 rounded-md transition-colors\" title=\"Edit\">
+                                                <button onClick={() => handleEdit(brand)} className="p-2 text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-700 dark:hover:bg-gray-700 rounded-md transition-colors" title="Edit">
                                                 <FaEdit size={16} />
                                             </button>
-                                            <button onClick={() => handleDel(brand.brand_id)} className=\"p-2 text-red-600 hover:bg-red-50 dark:hover:bg-gray-700 dark:hover:bg-gray-700 rounded-md transition-colors\" title=\"Delete\">
+                                            <button onClick={() => handleDel(brand.brand_id)} className="p-2 text-red-600 hover:bg-red-50 dark:hover:bg-gray-700 dark:hover:bg-gray-700 rounded-md transition-colors" title="Delete">
                                             <FaTrash size={16} />
                                         </button>
                                     </div>
