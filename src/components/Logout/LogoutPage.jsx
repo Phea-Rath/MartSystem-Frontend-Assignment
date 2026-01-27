@@ -1,10 +1,12 @@
 // pages/LogoutPage.jsx
 import React, { useState, useEffect } from 'react';
 import { FaSignOutAlt, FaUser, FaCheckCircle, FaSpinner, FaHome, FaSignInAlt } from 'react-icons/fa';
+import { useNavigate } from 'react-router';
 
 const LogoutPage = ({ onLogout, onCancel, user = {} }) => {
   const [isLoggingOut, setIsLoggingOut] = useState(false);
   const [isLoggedOut, setIsLoggedOut] = useState(false);
+  const navigater = useNavigate();
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -35,6 +37,7 @@ const LogoutPage = ({ onLogout, onCancel, user = {} }) => {
   };
 
   const handleCancel = () => {
+    navigater('/');
     if (onCancel) onCancel();
   };
 

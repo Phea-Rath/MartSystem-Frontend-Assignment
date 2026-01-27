@@ -166,12 +166,12 @@ const WarehouseList = () => {
 
             <div className="p-6 mx-auto">
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
-                    <div>
-                        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Warehouses</h1>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Manage your storage locations ({warehouses?.total || 0} total)</p>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-3 sm:gap-4">
+                    <div className="min-w-0">
+                        <h1 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white">Warehouses</h1>
+                        <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400">Manage your storage locations ({warehouses?.total || 0} total)</p>
                     </div>
-                    <button onClick={handleAdd} className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors shadow-sm">
+                    <button onClick={handleAdd} className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-3 md:px-4 py-2 rounded-lg transition-colors shadow-sm text-sm md:text-base font-semibold whitespace-nowrap">
                         <FaPlus size={14} />
                         <span>Add Warehouse</span>
                     </button>
@@ -183,28 +183,31 @@ const WarehouseList = () => {
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="bg-gray-50 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-700">
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">ID</th>
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Warehouse Name</th>
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Status</th>
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Created At</th>
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300 text-right">Actions</th>
+                                    <th className="hidden sm:table-cell px-3 md:px-6 py-3 md:py-4 text-xs md:text-sm font-semibold text-gray-600 dark:text-gray-300">ID</th>
+                                    <th className="px-3 md:px-6 py-3 md:py-4 text-xs md:text-sm font-semibold text-gray-600 dark:text-gray-300">Warehouse Name</th>
+                                    <th className="hidden md:table-cell px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Status</th>
+                                    <th className="hidden lg:table-cell px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Created At</th>
+                                    <th className="px-3 md:px-6 py-3 md:py-4 text-xs md:text-sm font-semibold text-gray-600 dark:text-gray-300 text-right">Actions</th>
                                 </tr>
                             </thead>
                             {!isPending && <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
                                 {warehouses?.data?.map((warehouse) => (
                                     <tr key={warehouse.warehouse_id} className="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-                                        <td className="px-6 py-4 text-sm text-gray-500 dark:text-gray-400 font-medium">
+                                        <td className="hidden sm:table-cell px-3 md:px-6 py-3 md:py-4 text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium">
                                             #{warehouse.warehouse_id}
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <div className="flex items-center gap-3">
-                                                <div className="p-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg">
+                                        <td className="px-3 md:px-6 py-3 md:py-4">
+                                            <div className="flex items-center gap-2 md:gap-3">
+                                                <div className="p-1.5 md:p-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg hidden md:block">
                                                     <FaWarehouse size={16} />
                                                 </div>
-                                                <span className="font-medium text-gray-700 dark:text-white">{warehouse.warehouse_name}</span>
+                                                <div className="min-w-0 flex-1">
+                                                    <span className="font-medium text-gray-700 dark:text-white text-sm md:text-base">{warehouse.warehouse_name}</span>
+                                                    <p className="md:hidden text-xs text-gray-500 dark:text-gray-400">{warehouse.is_active ? 'Active' : 'Inactive'}</p>
+                                                </div>
                                             </div>
                                         </td>
-                                        <td className="px-6 py-4">
+                                        <td className="hidden md:table-cell px-6 py-4">
                                             <span className={`px-2 py-1 rounded-full text-xs font-semibold ${warehouse.is_active
                                                 ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
                                                 : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
@@ -212,16 +215,18 @@ const WarehouseList = () => {
                                                 {warehouse.is_active ? 'Active' : 'Inactive'}
                                             </span>
                                         </td>
-                                        <td className="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                        <td className="hidden lg:table-cell px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
                                             {new Date(warehouse.created_at).toLocaleDateString()}
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <div className="flex justify-end gap-2">
-                                                <button onClick={() => handleEdit(warehouse)} className="p-2 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md transition-colors" title="Edit">
-                                                    <FaEdit size={16} />
+                                        <td className="px-3 md:px-6 py-3 md:py-4">
+                                            <div className="flex justify-end gap-1 md:gap-2">
+                                                <button onClick={() => handleEdit(warehouse)} className="p-1.5 md:p-2 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md transition-colors" title="Edit">
+                                                    <FaEdit size={14} className="md:hidden" />
+                                                    <FaEdit size={16} className="hidden md:block" />
                                                 </button>
-                                                <button onClick={() => handleDel(warehouse.warehouse_id)} className="p-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-gray-700 rounded-md transition-colors" title="Delete">
-                                                    <FaTrash size={16} />
+                                                <button onClick={() => handleDel(warehouse.warehouse_id)} className="p-1.5 md:p-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-gray-700 rounded-md transition-colors" title="Delete">
+                                                    <FaTrash size={14} className="md:hidden" />
+                                                    <FaTrash size={16} className="hidden md:block" />
                                                 </button>
                                             </div>
                                         </td>
@@ -232,17 +237,17 @@ const WarehouseList = () => {
                     </div>
 
                     {/* Pagination Footer */}
-                    <div className="px-6 py-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between">
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <div className="px-3 md:px-6 py-3 md:py-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+                        <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
                             Showing <span className="font-semibold text-gray-800 dark:text-white">{warehouses?.data?.length || 0}</span> results
                         </p>
-                        <div className="flex gap-1">
+                        <div className="flex gap-0.5 md:gap-1 flex-wrap justify-center sm:justify-end">
                             {warehouses?.links.map((link, index) => (
                                 <button
                                     key={index}
                                     disabled={!link.url || link.active}
                                     onClick={() => handlePageChange(link.url)}
-                                    className={`px-3 py-1 rounded border text-sm transition-all ${link.active
+                                    className={`px-2 md:px-3 py-1 rounded border text-xs md:text-sm transition-all ${link.active
                                         ? 'bg-blue-600 text-white border-blue-600'
                                         : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50'
                                         }`}

@@ -142,16 +142,16 @@ const StockTypeList = () => {
 
             <div className="p-6 mx-auto">
                 {/* Header */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
-                    <div>
-                        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Stock Types</h1>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-3 sm:gap-4">
+                    <div className="min-w-0">
+                        <h1 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white">Stock Types</h1>
+                        <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400">
                             Categorize your inventory movements ({stockData?.total || 0} total)
                         </p>
                     </div>
                     <button
                         onClick={handleAdd}
-                        className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg transition-colors shadow-sm"
+                        className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-3 md:px-4 py-2 rounded-lg transition-colors shadow-sm text-sm md:text-base font-semibold whitespace-nowrap"
                     >
                         <FaPlus size={14} />
                         <span>Add Stock Type</span>
@@ -164,36 +164,41 @@ const StockTypeList = () => {
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="bg-gray-50 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-700">
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">ID</th>
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Type Name</th>
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Created At</th>
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300 text-right">Actions</th>
+                                    <th className="hidden sm:table-cell px-3 md:px-6 py-3 md:py-4 text-xs md:text-sm font-semibold text-gray-600 dark:text-gray-300">ID</th>
+                                    <th className="px-3 md:px-6 py-3 md:py-4 text-xs md:text-sm font-semibold text-gray-600 dark:text-gray-300">Type Name</th>
+                                    <th className="hidden md:table-cell px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Created At</th>
+                                    <th className="px-3 md:px-6 py-3 md:py-4 text-xs md:text-sm font-semibold text-gray-600 dark:text-gray-300 text-right">Actions</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
                                 {!isPending && stockData?.data?.map((item) => (
                                     <tr key={item.stock_type_id} className="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-                                        <td className="px-6 py-4 text-sm text-gray-500 dark:text-gray-400 font-medium">
+                                        <td className="hidden sm:table-cell px-3 md:px-6 py-3 md:py-4 text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium">
                                             #{item.stock_type_id}
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <div className="flex items-center gap-3">
-                                                <div className="p-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-lg">
+                                        <td className="px-3 md:px-6 py-3 md:py-4">
+                                            <div className="flex items-center gap-2 md:gap-3">
+                                                <div className="p-1.5 md:p-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-lg hidden md:block">
                                                     <FaBoxes size={16} />
                                                 </div>
-                                                <span className="font-medium text-gray-700 dark:text-white">{item.stock_type_name}</span>
+                                                <div className="min-w-0 flex-1">
+                                                    <span className="font-medium text-gray-700 dark:text-white text-sm md:text-base">{item.stock_type_name}</span>
+                                                    <p className="md:hidden text-xs text-gray-500 dark:text-gray-400">{item.created_at ? new Date(item.created_at).toLocaleDateString() : 'N/A'}</p>
+                                                </div>
                                             </div>
                                         </td>
-                                        <td className="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                        <td className="hidden md:table-cell px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
                                             {item.created_at ? new Date(item.created_at).toLocaleDateString() : 'N/A'}
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <div className="flex justify-end gap-2">
-                                                <button onClick={() => handleEdit(item)} className="p-2 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md transition-colors">
-                                                    <FaEdit size={16} />
+                                        <td className="px-3 md:px-6 py-3 md:py-4">
+                                            <div className="flex justify-end gap-1 md:gap-2">
+                                                <button onClick={() => handleEdit(item)} className="p-1.5 md:p-2 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md transition-colors">
+                                                    <FaEdit size={14} className="md:hidden" />
+                                                    <FaEdit size={16} className="hidden md:block" />
                                                 </button>
-                                                <button onClick={() => { setDelId(item.stock_type_id); setIsOpen(true); }} className="p-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-gray-700 rounded-md transition-colors">
-                                                    <FaTrash size={16} />
+                                                <button onClick={() => { setDelId(item.stock_type_id); setIsOpen(true); }} className="p-1.5 md:p-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-gray-700 rounded-md transition-colors">
+                                                    <FaTrash size={14} className="md:hidden" />
+                                                    <FaTrash size={16} className="hidden md:block" />
                                                 </button>
                                             </div>
                                         </td>
@@ -204,17 +209,17 @@ const StockTypeList = () => {
                     </div>
 
                     {/* Pagination */}
-                    <div className="px-6 py-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between">
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <div className="px-3 md:px-6 py-3 md:py-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+                        <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
                             Showing <span className="font-semibold text-gray-800 dark:text-white">{stockData?.data?.length || 0}</span> results
                         </p>
-                        <div className="flex gap-1">
+                        <div className="flex gap-0.5 md:gap-1 flex-wrap justify-center sm:justify-end">
                             {stockData?.links?.map((link, index) => (
                                 <button
                                     key={index}
                                     disabled={!link.url || link.active}
                                     onClick={() => handlePageChange(link.url)}
-                                    className={`px-3 py-1 rounded border text-sm transition-all ${link.active
+                                    className={`px-2 md:px-3 py-1 rounded border text-xs md:text-sm transition-all ${link.active
                                         ? 'bg-emerald-600 text-white border-emerald-600'
                                         : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50'
                                         }`}

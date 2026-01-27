@@ -22,234 +22,525 @@ const items = {
     "data": [
         {
             "item_id": 1,
-            "item_code": "202601246592",
-            "item_name": "Tex Oil",
-            "unit_price": "15.00",
-            "discount": "5.00",
+            "item_code": "MM20260001",
+            "item_name": "Coca Cola Can",
+            "unit_price": "1.20",
+            "discount": "0.10",
             "category_id": 1,
             "brand_id": 1,
-            "description": "Good and smooth",
+            "description": "Refreshing soft drink",
             "created_by": 1,
             "images": [
                 {
                     "image_id": 1,
-                    "image_name": "oil1.png",
-                    "image_url": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0"
+                    "image_name": "coke-can.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1580910051074-3eb694886505"
                 }
             ],
             "attributes": [
-                { "attr_name": "size", "attr_values": ["XL"] }
+                {
+                    "attr_name": "size",
+                    "attr_values": ["330ml"]
+                }
             ]
         },
         {
             "item_id": 2,
-            "item_code": "202601246593",
-            "item_name": "Engine Oil Pro",
-            "unit_price": "22.00",
-            "discount": "3.00",
+            "item_code": "MM20260002",
+            "item_name": "Pepsi Bottle",
+            "unit_price": "1.50",
+            "discount": "0.15",
             "category_id": 1,
             "brand_id": 2,
-            "description": "High performance engine oil",
+            "description": "Carbonated soft drink",
             "created_by": 1,
             "images": [
                 {
                     "image_id": 2,
-                    "image_name": "oil2.png",
-                    "image_url": "https://images.unsplash.com/photo-1615906655593-ad0386982a0f"
+                    "image_name": "pepsi.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1613478223719-2ab802602423"
                 }
             ],
             "attributes": [
-                { "attr_name": "grade", "attr_values": ["5W-30"] }
+                {
+                    "attr_name": "size",
+                    "attr_values": ["500ml"]
+                }
             ]
         },
         {
             "item_id": 3,
-            "item_code": "202601246594",
-            "item_name": "Brake Fluid",
-            "unit_price": "8.50",
+            "item_code": "MM20260003",
+            "item_name": "Mineral Water",
+            "unit_price": "0.80",
             "discount": "0.00",
-            "category_id": 2,
-            "brand_id": 1,
-            "description": "DOT 3 brake fluid",
+            "category_id": 1,
+            "brand_id": 3,
+            "description": "Pure drinking water",
             "created_by": 1,
             "images": [
                 {
                     "image_id": 3,
-                    "image_name": "brake.png",
-                    "image_url": "https://images.unsplash.com/photo-1600359756098-8bc8f07d94e5"
+                    "image_name": "water.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d"
                 }
             ],
             "attributes": [
-                { "attr_name": "type", "attr_values": ["DOT3"] }
+                {
+                    "attr_name": "size",
+                    "attr_values": ["600ml"]
+                }
             ]
         },
         {
             "item_id": 4,
-            "item_code": "202601246595",
-            "item_name": "Hydraulic Oil",
-            "unit_price": "18.00",
-            "discount": "2.00",
-            "category_id": 1,
-            "brand_id": 3,
-            "description": "Industrial hydraulic oil",
+            "item_code": "MM20260004",
+            "item_name": "Lay's Potato Chips",
+            "unit_price": "2.00",
+            "discount": "0.20",
+            "category_id": 2,
+            "brand_id": 4,
+            "description": "Crispy potato chips",
             "created_by": 1,
             "images": [
                 {
                     "image_id": 4,
-                    "image_name": "hydraulic.png",
-                    "image_url": "https://images.unsplash.com/photo-1586864387789-628af9feed72"
+                    "image_name": "chips.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1585238342028-4bbc9c6d1c08"
                 }
             ],
             "attributes": [
-                { "attr_name": "grade", "attr_values": ["ISO 46"] }
+                {
+                    "attr_name": "flavor",
+                    "attr_values": ["Original"]
+                }
             ]
         },
         {
             "item_id": 5,
-            "item_code": "202601246596",
-            "item_name": "Coolant Liquid",
-            "unit_price": "10.00",
-            "discount": "1.00",
-            "category_id": 3,
-            "brand_id": 2,
-            "description": "Engine cooling liquid",
+            "item_code": "MM20260005",
+            "item_name": "Oreo Cookies",
+            "unit_price": "1.80",
+            "discount": "0.10",
+            "category_id": 2,
+            "brand_id": 5,
+            "description": "Chocolate cream cookies",
             "created_by": 1,
             "images": [
                 {
                     "image_id": 5,
-                    "image_name": "coolant.png",
-                    "image_url": "https://images.unsplash.com/photo-1621947081720-86970823b77a"
+                    "image_name": "oreo.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1599785209798-7e6a6c5b09b8"
                 }
             ],
             "attributes": [
-                { "attr_name": "color", "attr_values": ["Green"] }
+                {
+                    "attr_name": "pack",
+                    "attr_values": ["12 pcs"]
+                }
             ]
         },
-
         {
             "item_id": 6,
-            "item_code": "202601246597",
-            "item_name": "Gear Oil",
-            "unit_price": "20.00",
-            "discount": "2.50",
-            "category_id": 1,
-            "brand_id": 3,
-            "description": "Smooth gear shifting oil",
+            "item_code": "MM20260006",
+            "item_name": "Instant Noodles",
+            "unit_price": "0.50",
+            "discount": "0.05",
+            "category_id": 3,
+            "brand_id": 6,
+            "description": "Quick meal noodles",
             "created_by": 1,
             "images": [
                 {
                     "image_id": 6,
-                    "image_name": "gear.png",
-                    "image_url": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7"
+                    "image_name": "noodles.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1604909053197-5c2c2b3d5e2d"
                 }
             ],
             "attributes": [
-                { "attr_name": "viscosity", "attr_values": ["75W-90"] }
+                {
+                    "attr_name": "flavor",
+                    "attr_values": ["Chicken"]
+                }
             ]
         },
         {
             "item_id": 7,
-            "item_code": "202601246598",
-            "item_name": "Power Steering Oil",
-            "unit_price": "12.00",
-            "discount": "1.50",
-            "category_id": 1,
-            "brand_id": 2,
-            "description": "Smooth steering control",
+            "item_code": "MM20260007",
+            "item_name": "Fresh Milk",
+            "unit_price": "1.30",
+            "discount": "0.10",
+            "category_id": 4,
+            "brand_id": 7,
+            "description": "Dairy fresh milk",
             "created_by": 1,
             "images": [
                 {
                     "image_id": 7,
-                    "image_name": "steering.png",
-                    "image_url": "https://images.unsplash.com/photo-1597764699513-9b6b80b0f1d6"
+                    "image_name": "milk.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1580910051074-1c4c2b78b6c2"
                 }
             ],
             "attributes": [
-                { "attr_name": "type", "attr_values": ["ATF"] }
+                {
+                    "attr_name": "fat",
+                    "attr_values": ["Full Cream"]
+                }
             ]
         },
         {
             "item_id": 8,
-            "item_code": "202601246599",
-            "item_name": "Transmission Oil",
-            "unit_price": "25.00",
-            "discount": "4.00",
-            "category_id": 1,
-            "brand_id": 4,
-            "description": "Automatic transmission oil",
+            "item_code": "MM20260008",
+            "item_name": "White Bread",
+            "unit_price": "1.10",
+            "discount": "0.05",
+            "category_id": 4,
+            "brand_id": 8,
+            "description": "Soft bakery bread",
             "created_by": 1,
             "images": [
                 {
                     "image_id": 8,
-                    "image_name": "transmission.png",
-                    "image_url": "https://images.unsplash.com/photo-1558981806-ec527fa84c39"
+                    "image_name": "bread.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1608198093002-ad4e005484ec"
                 }
             ],
             "attributes": [
-                { "attr_name": "type", "attr_values": ["Automatic"] }
+                {
+                    "attr_name": "weight",
+                    "attr_values": ["400g"]
+                }
             ]
         },
+
+
+        // items 9–20 continue same pattern (rice, sugar, coffee, tea, eggs, soap, shampoo, toothpaste, tissue, cooking oil, salt, soy sauce)
+
         {
             "item_id": 9,
-            "item_code": "202601246600",
-            "item_name": "Industrial Lubricant",
-            "unit_price": "30.00",
-            "discount": "5.00",
-            "category_id": 4,
-            "brand_id": 5,
-            "description": "Heavy duty industrial use",
+            "item_code": "MM20260009",
+            "item_name": "Jasmine Rice",
+            "unit_price": "12.00",
+            "discount": "1.00",
+            "category_id": 5,
+            "brand_id": 9,
+            "description": "Premium jasmine rice",
             "created_by": 1,
             "images": [
                 {
                     "image_id": 9,
-                    "image_name": "industrial.png",
-                    "image_url": "https://images.unsplash.com/photo-1581090700227-1e37b190418e"
+                    "image_name": "rice.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1604335399105-4ec7a6b2d6c5"
                 }
             ],
             "attributes": [
-                { "attr_name": "usage", "attr_values": ["Factory"] }
+                {
+                    "attr_name": "weight",
+                    "attr_values": ["5kg"]
+                }
             ]
         },
         {
             "item_id": 10,
-            "item_code": "202601246601",
-            "item_name": "Synthetic Oil X",
-            "unit_price": "28.00",
-            "discount": "3.00",
-            "category_id": 1,
-            "brand_id": 4,
-            "description": "Premium synthetic oil",
+            "item_code": "MM20260010",
+            "item_name": "White Sugar",
+            "unit_price": "2.50",
+            "discount": "0.20",
+            "category_id": 5,
+            "brand_id": 10,
+            "description": "Refined white sugar",
             "created_by": 1,
             "images": [
                 {
                     "image_id": 10,
-                    "image_name": "synthetic.png",
-                    "image_url": "https://images.unsplash.com/photo-1581092919534-1ec5c6b9d36b"
+                    "image_name": "sugar.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1587049352847-0bfe03b2e89d"
                 }
             ],
             "attributes": [
-                { "attr_name": "grade", "attr_values": ["5W-40"] }
+                {
+                    "attr_name": "weight",
+                    "attr_values": ["1kg"]
+                }
             ]
         },
+        {
+            "item_id": 11,
+            "item_code": "MM20260011",
+            "item_name": "Instant Coffee",
+            "unit_price": "3.20",
+            "discount": "0.30",
+            "category_id": 6,
+            "brand_id": 11,
+            "description": "Strong instant coffee",
+            "created_by": 1,
+            "images": [
+                {
+                    "image_id": 11,
+                    "image_name": "coffee.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+                }
+            ],
+            "attributes": [
+                {
+                    "attr_name": "type",
+                    "attr_values": ["Classic"]
+                }
+            ]
+        },
+        {
+            "item_id": 12,
+            "item_code": "MM20260012",
+            "item_name": "Green Tea",
+            "unit_price": "2.80",
+            "discount": "0.20",
+            "category_id": 6,
+            "brand_id": 12,
+            "description": "Healthy green tea",
+            "created_by": 1,
+            "images": [
+                {
+                    "image_id": 12,
+                    "image_name": "tea.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1544787219-7f47ccb76574"
+                }
+            ],
+            "attributes": [
+                {
+                    "attr_name": "pack",
+                    "attr_values": ["20 bags"]
+                }
+            ]
+        },
+        {
+            "item_id": 13,
+            "item_code": "MM20260013",
+            "item_name": "Chicken Eggs",
+            "unit_price": "2.40",
+            "discount": "0.10",
+            "category_id": 7,
+            "brand_id": 13,
+            "description": "Fresh farm eggs",
+            "created_by": 1,
+            "images": [
+                {
+                    "image_id": 13,
+                    "image_name": "eggs.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1587486913049-53fc88980cfc"
+                }
+            ],
+            "attributes": [
+                {
+                    "attr_name": "quantity",
+                    "attr_values": ["10 pcs"]
+                }
+            ]
+        },
+        {
+            "item_id": 14,
+            "item_code": "MM20260014",
+            "item_name": "Bath Soap",
+            "unit_price": "1.00",
+            "discount": "0.05",
+            "category_id": 8,
+            "brand_id": 14,
+            "description": "Gentle bath soap",
+            "created_by": 1,
+            "images": [
+                {
+                    "image_id": 14,
+                    "image_name": "soap.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1607006344380-b6775a0824ce"
+                }
+            ],
+            "attributes": [
+                {
+                    "attr_name": "scent",
+                    "attr_values": ["Lemon"]
+                }
+            ]
+        },
+        {
+            "item_id": 15,
+            "item_code": "MM20260015",
+            "item_name": "Shampoo",
+            "unit_price": "3.50",
+            "discount": "0.30",
+            "category_id": 8,
+            "brand_id": 15,
+            "description": "Hair care shampoo",
+            "created_by": 1,
+            "images": [
+                {
+                    "image_id": 15,
+                    "image_name": "shampoo.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1585232351009-aa87416fca90"
+                }
+            ],
+            "attributes": [
+                {
+                    "attr_name": "volume",
+                    "attr_values": ["400ml"]
+                }
+            ]
+        },
+        {
+            "item_id": 16,
+            "item_code": "MM20260016",
+            "item_name": "Toothpaste",
+            "unit_price": "2.00",
+            "discount": "0.15",
+            "category_id": 8,
+            "brand_id": 16,
+            "description": "Mint toothpaste",
+            "created_by": 1,
+            "images": [
+                {
+                    "image_id": 16,
+                    "image_name": "toothpaste.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1619451427882-6aaaded0ccca"
+                }
+            ],
+            "attributes": [
+                {
+                    "attr_name": "flavor",
+                    "attr_values": ["Mint"]
+                }
+            ]
+        },
+        {
+            "item_id": 17,
+            "item_code": "MM20260017",
+            "item_name": "Facial Tissue",
+            "unit_price": "1.20",
+            "discount": "0.10",
+            "category_id": 9,
+            "brand_id": 17,
+            "description": "Soft facial tissue",
+            "created_by": 1,
+            "images": [
+                {
+                    "image_id": 17,
+                    "image_name": "tissue.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1583947215259-38e31be8751f"
+                }
+            ],
+            "attributes": [
+                {
+                    "attr_name": "ply",
+                    "attr_values": ["2 ply"]
+                }
+            ]
+        },
+        {
+            "item_id": 18,
+            "item_code": "MM20260018",
+            "item_name": "Cooking Oil",
+            "unit_price": "4.50",
+            "discount": "0.40",
+            "category_id": 10,
+            "brand_id": 18,
+            "description": "Vegetable cooking oil",
+            "created_by": 1,
+            "images": [
+                {
+                    "image_id": 18,
+                    "image_name": "oil.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1620807773206-49c1f2957417"
+                }
+            ],
+            "attributes": [
+                {
+                    "attr_name": "volume",
+                    "attr_values": ["1L"]
+                }
+            ]
+        },
+        {
+            "item_id": 19,
+            "item_code": "MM20260019",
+            "item_name": "Salt",
+            "unit_price": "0.60",
+            "discount": "0.00",
+            "category_id": 10,
+            "brand_id": 19,
+            "description": "Iodized salt",
+            "created_by": 1,
+            "images": [
+                {
+                    "image_id": 19,
+                    "image_name": "salt.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1604908177225-1c3b7b0c9b8f"
+                }
+            ],
+            "attributes": [
+                {
+                    "attr_name": "weight",
+                    "attr_values": ["500g"]
+                }
+            ]
+        },
+        {
+            "item_id": 20,
+            "item_code": "MM20260020",
+            "item_name": "Soy Sauce",
+            "unit_price": "1.80",
+            "discount": "0.10",
+            "category_id": 10,
+            "brand_id": 20,
+            "description": "Classic soy sauce",
+            "created_by": 1,
+            "images": [
+                {
+                    "image_id": 20,
+                    "image_name": "soy-sauce.jpg",
+                    "image_url": "https://images.unsplash.com/photo-1617191518001-4c13b56c63a4"
+                }
+            ],
+            "attributes": [
+                {
+                    "attr_name": "volume",
+                    "attr_values": ["700ml"]
+                }
+            ]
+        }
 
-        { "item_id": 11, "item_code": "202601246602", "item_name": "Diesel Oil", "unit_price": "19.00", "discount": "2.00", "category_id": 1, "brand_id": 1, "description": "For diesel engines", "created_by": 1, "images": [{ "image_id": 11, "image_name": "diesel.png", "image_url": "https://images.unsplash.com/photo-1600369671737-8b5c6a33a7bb" }], "attributes": [{ "attr_name": "engine", "attr_values": ["Diesel"] }] },
-        { "item_id": 12, "item_code": "202601246603", "item_name": "Motor Oil Basic", "unit_price": "14.00", "discount": "1.00", "category_id": 1, "brand_id": 2, "description": "Daily motor oil", "created_by": 1, "images": [{ "image_id": 12, "image_name": "motor.png", "image_url": "https://images.unsplash.com/photo-1614064641938-3bbee52942c7" }], "attributes": [{ "attr_name": "grade", "attr_values": ["10W-30"] }] },
-        { "item_id": 13, "item_code": "202601246604", "item_name": "Racing Oil", "unit_price": "35.00", "discount": "6.00", "category_id": 1, "brand_id": 6, "description": "High speed racing oil", "created_by": 1, "images": [{ "image_id": 13, "image_name": "racing.png", "image_url": "https://images.unsplash.com/photo-1503376780353-7e6692767b70" }], "attributes": [{ "attr_name": "performance", "attr_values": ["Racing"] }] },
-        { "item_id": 14, "item_code": "202601246605", "item_name": "Chain Lubricant", "unit_price": "9.00", "discount": "0.50", "category_id": 4, "brand_id": 3, "description": "Bike chain lubricant", "created_by": 1, "images": [{ "image_id": 14, "image_name": "chain.png", "image_url": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023" }], "attributes": [{ "attr_name": "use", "attr_values": ["Motorbike"] }] },
-        { "item_id": 15, "item_code": "202601246606", "item_name": "ATF Oil", "unit_price": "17.00", "discount": "2.00", "category_id": 1, "brand_id": 4, "description": "Automatic transmission fluid", "created_by": 1, "images": [{ "image_id": 15, "image_name": "atf.png", "image_url": "https://images.unsplash.com/photo-1601924928376-a2f8a8b31f6b" }], "attributes": [{ "attr_name": "type", "attr_values": ["ATF"] }] },
-        { "item_id": 16, "item_code": "202601246607", "item_name": "Fork Oil", "unit_price": "13.00", "discount": "1.00", "category_id": 1, "brand_id": 2, "description": "Motorcycle fork oil", "created_by": 1, "images": [{ "image_id": 16, "image_name": "fork.png", "image_url": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c" }], "attributes": [{ "attr_name": "weight", "attr_values": ["10W"] }] },
-        { "item_id": 17, "item_code": "202601246608", "item_name": "Compressor Oil", "unit_price": "21.00", "discount": "2.00", "category_id": 4, "brand_id": 5, "description": "Air compressor oil", "created_by": 1, "images": [{ "image_id": 17, "image_name": "compressor.png", "image_url": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc" }], "attributes": [{ "attr_name": "machine", "attr_values": ["Compressor"] }] },
-        { "item_id": 18, "item_code": "202601246609", "item_name": "Vacuum Pump Oil", "unit_price": "23.00", "discount": "3.00", "category_id": 4, "brand_id": 6, "description": "Vacuum pump lubricant", "created_by": 1, "images": [{ "image_id": 18, "image_name": "vacuum.png", "image_url": "https://images.unsplash.com/photo-1581091012184-7e0cdfbb6793" }], "attributes": [{ "attr_name": "use", "attr_values": ["Vacuum Pump"] }] },
-        { "item_id": 19, "item_code": "202601246610", "item_name": "Two Stroke Oil", "unit_price": "11.00", "discount": "1.00", "category_id": 1, "brand_id": 1, "description": "2T engine oil", "created_by": 1, "images": [{ "image_id": 19, "image_name": "2t.png", "image_url": "https://images.unsplash.com/photo-1602872029708-84e5b2fda95f" }], "attributes": [{ "attr_name": "engine", "attr_values": ["2 Stroke"] }] },
-        { "item_id": 20, "item_code": "202601246611", "item_name": "Marine Oil", "unit_price": "40.00", "discount": "7.00", "category_id": 5, "brand_id": 7, "description": "Marine engine oil", "created_by": 1, "images": [{ "image_id": 20, "image_name": "marine.png", "image_url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" }], "attributes": [{ "attr_name": "use", "attr_values": ["Marine"] }] }
+
     ],
     "current_page": 1,
     "per_page": 10,
     "total": 20,
     "last_page": 2,
     "from": 1,
-    "to": 10
+    "to": 10,
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "page": null,
+            "active": false
+        },
+        {
+            "url": "http://127.0.0.1:8000/api/products?page=1",
+            "label": "1",
+            "page": 1,
+            "active": true
+        },
+        {
+            "url": "http://127.0.0.1:8000/api/products?page=2",
+            "label": "2",
+            "page": 2,
+            "active": false
+        },
+        {
+            "url": "http://127.0.0.1:8000/api/products?page=2",
+            "label": "Next &raquo;",
+            "page": 2,
+            "active": false
+        }
+    ]
 }
+
 
 const ProductListPage = () => {
     const token = localStorage.getItem('token');
@@ -336,7 +627,7 @@ const ProductListPage = () => {
     };
 
     return (
-        <div className="p-4 md:p-8 bg-white dark:bg-gray-900 dark:text-gray-200 min-h-screen">
+        <div className="p-4 md:p-8 bg-transparent dark:text-gray-200 min-h-screen">
             <AlertQuestionBox
                 isOpen={isOpen}
                 type="question"

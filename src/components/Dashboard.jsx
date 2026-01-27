@@ -146,7 +146,7 @@ const dataBar = [
     },
 ];
 
-const popularExpanse = [
+const popularPurchase = [
     {
         name: "Computer",
         type: "Electronic",
@@ -382,7 +382,7 @@ const Dashboard = () => {
                 <div className="bg-red-300/50 text-red-800 rounded-tl-lg rounded-tr-lg shadow-sm">
                     <div className="px-4 pt-2">
                         <div className="flex justify-between items-center ">
-                            <h3 className="text-lg font-semibold">Expanse</h3>
+                            <h3 className="text-lg font-semibold">Purchase</h3>
                             <RiMoneyDollarCircleFill className="text-5xl text-red-800" />
                         </div>
                         <p className="text-xl">
@@ -460,7 +460,7 @@ const Dashboard = () => {
                 <div className="lg:col-span-2 bg-white dark:bg-gray-800 dark:text-gray-200 p-4 pb-20 rounded-lg shadow-md h-96">
                     <div className="flex justify-between mb-4">
                         <div className="border-l-4 border-green-500 flex-1 bg-gradient-to-r from-green-500/50 dark:to-gray-800 to-white px-3">
-                            <h3 className="text-lg font-semibold">Exspanse Line Chart</h3>
+                            <h3 className="text-lg font-semibold">Purchase Line Chart</h3>
                         </div>
                         <div className="space-x-2">
                             <button
@@ -528,10 +528,10 @@ const Dashboard = () => {
                 </div>
                 <div className="col-span-1 bg-white dark:bg-gray-800 dark:text-gray-200 p-4 rounded-lg shadow">
                     <div className="border-l-4 border-blue-500 bg-gradient-to-r from-blue-500/50 dark:to-gray-800 to-white px-3">
-                        <h3 className="text-lg font-semibold">Popular Exspanse</h3>
+                        <h3 className="text-lg font-semibold">Popular Purchase</h3>
                     </div>
                     <div className="mt-3 flex flex-col gap-3 p-2">
-                        {popularExpanse.map((ex, index) => (
+                        {popularPurchase.map((ex, index) => (
                             <div key={index} className="flex gap-5 items-center h-10">
                                 <div>
                                     <h1 className="text-[15px] font-extrabold text-gray-600">

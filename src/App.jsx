@@ -26,6 +26,9 @@ import InventoryForm from './components/inventories/InventoriesForm';
 import InventoryDetails from './components/inventories/InventoryDetail';
 import SalePage from './components/orders/SalePage';
 import MarketSalePage from './components/markets/MarketPage';
+import OrderListPage from './components/orders/OrderList';
+import OrderDetails from './components/orders/OrderDetail';
+import OrderUpdate from './components/orders/OrderUpdate';
 
 const routers = createBrowserRouter([
   {
@@ -157,22 +160,32 @@ const routers = createBrowserRouter([
         path: '/sales',
         element: <SalePage />
       },
-
-
       {
-        path: '/logout',
-        element: <LogoutPage />
+        path: '/orders',
+        element: <OrderListPage />
       },
       {
-        path: '/login',
-        element: <LoginPage />
+        path: '/orders/view/:id',
+        element: <OrderDetails />
+      },
+      {
+        path: '/orders/edit/:id',
+        element: <OrderUpdate />
       },
     ]
   },
   {
     path: '/market',
     element: <MarketSalePage />
-  }
+  },
+  {
+    path: '/logout',
+    element: <LogoutPage />
+  },
+  {
+    path: '/login',
+    element: <LoginPage />
+  },
 ]);
 
 function App() {

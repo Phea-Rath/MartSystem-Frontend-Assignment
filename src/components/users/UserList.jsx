@@ -150,16 +150,16 @@ const UserList = () => {
 
             <div className="p-6 mx-auto">
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
-                    <div>
-                        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">User Management</h1>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-3 sm:gap-4">
+                    <div className="min-w-0">
+                        <h1 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white">User Management</h1>
+                        <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400">
                             Manage staff accounts and permissions ({userListData?.total || 0} total)
                         </p>
                     </div>
                     <button
                         onClick={() => { setDataEdit(null); setShowForm(true); }}
-                        className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors shadow-sm"
+                        className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-3 md:px-4 py-2 rounded-lg transition-colors shadow-sm text-sm md:text-base font-semibold whitespace-nowrap"
                     >
                         <FaPlus size={14} />
                         <span>Add New User</span>
@@ -172,58 +172,61 @@ const UserList = () => {
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="bg-gray-50 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-700">
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">User</th>
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Contact</th>
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Role</th>
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Status</th>
-                                    <th className="px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300 text-right">Actions</th>
+                                    <th className="px-3 md:px-6 py-3 md:py-4 text-xs md:text-sm font-semibold text-gray-600 dark:text-gray-300">User</th>
+                                    <th className="hidden md:table-cell px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Contact</th>
+                                    <th className="hidden sm:table-cell px-3 md:px-6 py-3 md:py-4 text-xs md:text-sm font-semibold text-gray-600 dark:text-gray-300">Role</th>
+                                    <th className="hidden lg:table-cell px-6 py-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Status</th>
+                                    <th className="px-3 md:px-6 py-3 md:py-4 text-xs md:text-sm font-semibold text-gray-600 dark:text-gray-300 text-right">Actions</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
                                 {!isPending && userListData?.data?.map((user) => (
                                     <tr key={user.user_id} className="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-                                        <td className="px-6 py-4">
-                                            <div className="flex items-center gap-3">
+                                        <td className="px-3 md:px-6 py-3 md:py-4">
+                                            <div className="flex items-center gap-2 md:gap-3">
                                                 {user.image_url ? (
                                                     <img
                                                         src={user.image_url}
                                                         alt={user.user_name}
-                                                        className="w-10 h-10 rounded-full object-cover border border-gray-200 dark:border-gray-600"
+                                                        className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover border border-gray-200 dark:border-gray-600 flex-shrink-0"
                                                     />
                                                 ) : (
-                                                    <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
-                                                        <FaUserCircle size={24} />
+                                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0">
+                                                        <FaUserCircle size={20} />
                                                     </div>
                                                 )}
-                                                <div>
-                                                    <div className="font-medium text-gray-800 dark:text-white">{user.user_name}</div>
+                                                <div className="min-w-0 flex-1">
+                                                    <div className="font-medium text-gray-800 dark:text-white text-sm md:text-base truncate">{user.user_name}</div>
                                                     <div className="text-xs text-gray-400 dark:text-gray-500">ID: #{user.user_id}</div>
+                                                    <div className="md:hidden text-xs text-gray-500 dark:text-gray-400 truncate">{user.email}</div>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <div className="text-sm text-gray-700 dark:text-gray-300">{user.email}</div>
-                                            <div className="text-xs text-gray-500 dark:text-gray-400">{user.phone_number}</div>
+                                        <td className="hidden md:table-cell px-6 py-4">
+                                            <div className="text-sm text-gray-700 dark:text-gray-300 truncate">{user.email}</div>
+                                            <div className="text-xs text-gray-500 dark:text-gray-400 truncate">{user.phone_number}</div>
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <span className="px-3 py-1 text-xs font-medium rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border border-blue-100 dark:border-blue-700">
+                                        <td className="hidden sm:table-cell px-3 md:px-6 py-3 md:py-4">
+                                            <span className="px-2 md:px-3 py-0.5 md:py-1 text-xs font-medium rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border border-blue-100 dark:border-blue-700 whitespace-nowrap">
                                                 {user.role?.role_name || 'N/A'}
                                             </span>
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <span className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-md text-xs font-medium ${user.is_active ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400' : 'bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-400'
+                                        <td className="hidden lg:table-cell px-6 py-4">
+                                            <span className={`inline-flex items-center gap-1 md:gap-1.5 px-2 py-0.5 md:py-1 rounded-md text-xs font-medium ${user.is_active ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400' : 'bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-400'
                                                 }`}>
                                                 <span className={`w-1.5 h-1.5 rounded-full ${user.is_active ? 'bg-green-600 dark:bg-green-400' : 'bg-gray-400 dark:bg-gray-500'}`}></span>
                                                 {user.is_active ? 'Active' : 'Inactive'}
                                             </span>
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <div className="flex justify-end gap-2">
-                                                <button onClick={() => handleEdit(user)} className="p-2 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md transition-colors">
-                                                    <FaEdit size={16} />
+                                        <td className="px-3 md:px-6 py-3 md:py-4">
+                                            <div className="flex justify-end gap-1 md:gap-2">
+                                                <button onClick={() => handleEdit(user)} className="p-1.5 md:p-2 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md transition-colors">
+                                                    <FaEdit size={14} className="md:hidden" />
+                                                    <FaEdit size={16} className="hidden md:block" />
                                                 </button>
-                                                <button onClick={() => handleDel(user.user_id)} className="p-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-gray-700 rounded-md transition-colors">
-                                                    <FaTrash size={16} />
+                                                <button onClick={() => handleDel(user.user_id)} className="p-1.5 md:p-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-gray-700 rounded-md transition-colors">
+                                                    <FaTrash size={14} className="md:hidden" />
+                                                    <FaTrash size={16} className="hidden md:block" />
                                                 </button>
                                             </div>
                                         </td>
@@ -234,17 +237,17 @@ const UserList = () => {
                     </div>
 
                     {/* Pagination Footer */}
-                    <div className="px-6 py-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between">
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <div className="px-3 md:px-6 py-3 md:py-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+                        <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
                             Showing <span className="font-semibold text-gray-800 dark:text-white">{userListData?.data.length || 0}</span> results
                         </p>
-                        <div className="flex gap-1">
+                        <div className="flex gap-0.5 md:gap-1 flex-wrap justify-center sm:justify-end">
                             {userListData?.links?.map((link, index) => (
                                 <button
                                     key={index}
                                     disabled={!link.url || link.active}
                                     onClick={() => handlePageChange(link.url)}
-                                    className={`px-3 py-1 rounded border text-sm transition-all ${link.active
+                                    className={`px-2 md:px-3 py-1 rounded border text-xs md:text-sm transition-all ${link.active
                                         ? 'bg-indigo-600 text-white border-indigo-600'
                                         : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50'
                                         }`}

@@ -2,9 +2,9 @@ import Header from './Header'
 import Dashboard from '../components/Dashboard'
 import SideBar from './SideBar';
 import { Outlet } from 'react-router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 const Main = () => {
-    const [isShow, setShow] = useState(true);
+    const [isShow, setShow] = useState(false);
     const showSideBar = () => {
         localStorage.setItem('sidebar', !isShow);
         console.log('main');
@@ -12,9 +12,17 @@ const Main = () => {
 
         setShow(!isShow);
     }
+
+    useEffect(() => {
+        if (document.body.clientWidth < 768) {
+            setShow(false);
+        } else {
+            setShow(true);
+        }
+    }, []);
     return (
         <section className='font-display flex'>
-            <div className={`${isShow ? 'md:w-[250px]' : 'md:w-[0px]'}  transition-all duration-200`}>
+            <div className={`${isShow ? 'lg:w-[250px]' : 'lg:w-[0px]'}  transition-all duration-200`}>
                 <SideBar isShow={isShow} onChange={showSideBar} />
             </div>
             <article className='bg-sky-50 flex-1'>

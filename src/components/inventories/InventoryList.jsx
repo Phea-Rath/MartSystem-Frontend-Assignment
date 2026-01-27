@@ -10,218 +10,218 @@ import api from '../../services/api';
 import AlertQuestionBox from '../../services/AlertQuestionBox';
 import { useAlert } from '../../hooks/AlertContext';
 
-const stock = {
-    "success": true,
-    "data": {
-        "current_page": 1,
-        "data": [
-            {
-                "stock_id": 1,
-                "from_warehouse_id": 1,
-                "to_warehouse_id": 1,
-                "stock_type_id": 1,
-                "description": "Stock added for Tex Oil",
-                "quantity": 10,
-                "created_by": 1,
-                "is_deleted": 0,
-                "created_at": "2026-01-24T10:34:44.000000Z",
-                "updated_at": "2026-01-24T10:34:44.000000Z",
-                "from_warehouse": {
-                    "warehouse_id": 1,
-                    "warehouse_name": "Main Warehouse"
-                },
-                "to_warehouse": {
-                    "warehouse_id": 1,
-                    "warehouse_name": "Main Warehouse"
-                },
-                "stock_type": {
-                    "stock_type_id": 1,
-                    "stock_type_name": "Stock In"
-                },
-                "stock_details": [
-                    {
-                        "stock_id": 1,
-                        "item_id": 1,
-                        "quantity": 10,
-                        "item_cost": "15.00",
-                        "expire_date": "2026-01-31",
-                        "is_deleted": 0,
-                        "created_at": "2026-01-24T10:34:44.000000Z",
-                        "updated_at": "2026-01-24T10:34:44.000000Z",
-                        "item": {
-                            "item_id": 1,
-                            "category_id": 1,
-                            "brand_id": 1,
-                            "item_name": "Tex Oil",
-                            "item_code": "202601246592",
-                            "unit_price": "15.00",
-                            "item_cost": "0.00",
-                            "discount": "5.00",
-                            "description": "Good and smooth",
-                            "created_by": 1,
-                            "is_deleted": 0,
-                            "created_at": "2026-01-24T09:56:02.000000Z",
-                            "updated_at": "2026-01-24T09:56:02.000000Z"
-                        }
-                    }
-                ]
-            },
-            {
-                "stock_id": 2,
-                "from_warehouse_id": 2,
-                "to_warehouse_id": 1,
-                "stock_type_id": 1,
-                "description": "Stock added for Engine Oil Pro",
-                "quantity": 15,
-                "created_by": 1,
-                "is_deleted": 0,
-                "created_at": "2026-01-24T11:00:00.000000Z",
-                "updated_at": "2026-01-24T11:00:00.000000Z",
-                "from_warehouse": {
-                    "warehouse_id": 2,
-                    "warehouse_name": "Secondary Warehouse"
-                },
-                "to_warehouse": {
-                    "warehouse_id": 1,
-                    "warehouse_name": "Main Warehouse"
-                },
-                "stock_type": {
-                    "stock_type_id": 1,
-                    "stock_type_name": "Stock In"
-                },
-                "stock_details": [
-                    {
-                        "stock_id": 2,
-                        "item_id": 2,
-                        "quantity": 15,
-                        "item_cost": "22.00",
-                        "expire_date": "2026-02-28",
-                        "is_deleted": 0,
-                        "created_at": "2026-01-24T11:00:00.000000Z",
-                        "updated_at": "2026-01-24T11:00:00.000000Z",
-                        "item": {
-                            "item_id": 2,
-                            "category_id": 1,
-                            "brand_id": 2,
-                            "item_name": "Engine Oil Pro",
-                            "item_code": "202601246593",
-                            "unit_price": "22.00",
-                            "item_cost": "0.00",
-                            "discount": "3.00",
-                            "description": "High performance engine oil",
-                            "created_by": 1,
-                            "is_deleted": 0,
-                            "created_at": "2026-01-24T09:58:00.000000Z",
-                            "updated_at": "2026-01-24T09:58:00.000000Z"
-                        }
-                    }
-                ]
-            },
-            {
-                "stock_id": 3,
-                "from_warehouse_id": 1,
-                "to_warehouse_id": 2,
-                "stock_type_id": 1,
-                "description": "Stock added for Brake Fluid",
-                "quantity": 20,
-                "created_by": 1,
-                "is_deleted": 0,
-                "created_at": "2026-01-24T11:30:00.000000Z",
-                "updated_at": "2026-01-24T11:30:00.000000Z",
-                "from_warehouse": {
-                    "warehouse_id": 1,
-                    "warehouse_name": "Main Warehouse"
-                },
-                "to_warehouse": {
-                    "warehouse_id": 2,
-                    "warehouse_name": "Secondary Warehouse"
-                },
-                "stock_type": {
-                    "stock_type_id": 1,
-                    "stock_type_name": "Stock In"
-                },
-                "stock_details": [
-                    {
-                        "stock_id": 3,
-                        "item_id": 3,
-                        "quantity": 20,
-                        "item_cost": "11.00",
-                        "expire_date": "2026-03-15",
-                        "is_deleted": 0,
-                        "created_at": "2026-01-24T11:30:00.000000Z",
-                        "updated_at": "2026-01-24T11:30:00.000000Z",
-                        "item": {
-                            "item_id": 3,
-                            "category_id": 2,
-                            "brand_id": 2,
-                            "item_name": "Brake Fluid",
-                            "item_code": "202601246594",
-                            "unit_price": "8.50",
-                            "item_cost": "0.00",
-                            "discount": "0.00",
-                            "description": "DOT3 brake fluid",
-                            "created_by": 1,
-                            "is_deleted": 0,
-                            "created_at": "2026-01-24T09:59:00.000000Z",
-                            "updated_at": "2026-01-24T09:59:00.000000Z"
-                        }
-                    }
-                ]
-            },
-            {
-                "stock_id": 4,
-                "from_warehouse_id": 2,
-                "to_warehouse_id": 2,
-                "stock_type_id": 1,
-                "description": "Stock added for Hydraulic Oil",
-                "quantity": 12,
-                "created_by": 1,
-                "is_deleted": 0,
-                "created_at": "2026-01-24T12:00:00.000000Z",
-                "updated_at": "2026-01-24T12:00:00.000000Z",
-                "from_warehouse": {
-                    "warehouse_id": 2,
-                    "warehouse_name": "Secondary Warehouse"
-                },
-                "to_warehouse": {
-                    "warehouse_id": 2,
-                    "warehouse_name": "Secondary Warehouse"
-                },
-                "stock_type": {
-                    "stock_type_id": 1,
-                    "stock_type_name": "Stock In"
-                },
-                "stock_details": [
-                    {
-                        "stock_id": 4,
-                        "item_id": 4,
-                        "quantity": 12,
-                        "item_cost": "15.00",
-                        "expire_date": "2026-02-28",
-                        "is_deleted": 0,
-                        "created_at": "2026-01-24T12:00:00.000000Z",
-                        "updated_at": "2026-01-24T12:00:00.000000Z",
-                        "item": {
-                            "item_id": 4,
-                            "category_id": 1,
-                            "brand_id": 3,
-                            "item_name": "Hydraulic Oil",
-                            "item_code": "202601246595",
-                            "unit_price": "18.00",
-                            "item_cost": "0.00",
-                            "discount": "2.00",
-                            "description": "Industrial hydraulic oil",
-                            "created_by": 1,
-                            "is_deleted": 0,
-                            "created_at": "2026-01-24T10:00:00.000000Z",
-                            "updated_at": "2026-01-24T10:00:00.000000Z"
-                        }
-                    }
-                ]
-            }
-        ]
-    }
-}
+// const stock = {
+//     "success": true,
+//     "data": {
+//         "current_page": 1,
+//         "data": [
+//             {
+//                 "stock_id": 1,
+//                 "from_warehouse_id": 1,
+//                 "to_warehouse_id": 1,
+//                 "stock_type_id": 1,
+//                 "description": "Stock added for Tex Oil",
+//                 "quantity": 10,
+//                 "created_by": 1,
+//                 "is_deleted": 0,
+//                 "created_at": "2026-01-24T10:34:44.000000Z",
+//                 "updated_at": "2026-01-24T10:34:44.000000Z",
+//                 "from_warehouse": {
+//                     "warehouse_id": 1,
+//                     "warehouse_name": "Main Warehouse"
+//                 },
+//                 "to_warehouse": {
+//                     "warehouse_id": 1,
+//                     "warehouse_name": "Main Warehouse"
+//                 },
+//                 "stock_type": {
+//                     "stock_type_id": 1,
+//                     "stock_type_name": "Stock In"
+//                 },
+//                 "stock_details": [
+//                     {
+//                         "stock_id": 1,
+//                         "item_id": 1,
+//                         "quantity": 10,
+//                         "item_cost": "15.00",
+//                         "expire_date": "2026-01-31",
+//                         "is_deleted": 0,
+//                         "created_at": "2026-01-24T10:34:44.000000Z",
+//                         "updated_at": "2026-01-24T10:34:44.000000Z",
+//                         "item": {
+//                             "item_id": 1,
+//                             "category_id": 1,
+//                             "brand_id": 1,
+//                             "item_name": "Tex Oil",
+//                             "item_code": "202601246592",
+//                             "unit_price": "15.00",
+//                             "item_cost": "0.00",
+//                             "discount": "5.00",
+//                             "description": "Good and smooth",
+//                             "created_by": 1,
+//                             "is_deleted": 0,
+//                             "created_at": "2026-01-24T09:56:02.000000Z",
+//                             "updated_at": "2026-01-24T09:56:02.000000Z"
+//                         }
+//                     }
+//                 ]
+//             },
+//             {
+//                 "stock_id": 2,
+//                 "from_warehouse_id": 2,
+//                 "to_warehouse_id": 1,
+//                 "stock_type_id": 1,
+//                 "description": "Stock added for Engine Oil Pro",
+//                 "quantity": 15,
+//                 "created_by": 1,
+//                 "is_deleted": 0,
+//                 "created_at": "2026-01-24T11:00:00.000000Z",
+//                 "updated_at": "2026-01-24T11:00:00.000000Z",
+//                 "from_warehouse": {
+//                     "warehouse_id": 2,
+//                     "warehouse_name": "Secondary Warehouse"
+//                 },
+//                 "to_warehouse": {
+//                     "warehouse_id": 1,
+//                     "warehouse_name": "Main Warehouse"
+//                 },
+//                 "stock_type": {
+//                     "stock_type_id": 1,
+//                     "stock_type_name": "Stock In"
+//                 },
+//                 "stock_details": [
+//                     {
+//                         "stock_id": 2,
+//                         "item_id": 2,
+//                         "quantity": 15,
+//                         "item_cost": "22.00",
+//                         "expire_date": "2026-02-28",
+//                         "is_deleted": 0,
+//                         "created_at": "2026-01-24T11:00:00.000000Z",
+//                         "updated_at": "2026-01-24T11:00:00.000000Z",
+//                         "item": {
+//                             "item_id": 2,
+//                             "category_id": 1,
+//                             "brand_id": 2,
+//                             "item_name": "Engine Oil Pro",
+//                             "item_code": "202601246593",
+//                             "unit_price": "22.00",
+//                             "item_cost": "0.00",
+//                             "discount": "3.00",
+//                             "description": "High performance engine oil",
+//                             "created_by": 1,
+//                             "is_deleted": 0,
+//                             "created_at": "2026-01-24T09:58:00.000000Z",
+//                             "updated_at": "2026-01-24T09:58:00.000000Z"
+//                         }
+//                     }
+//                 ]
+//             },
+//             {
+//                 "stock_id": 3,
+//                 "from_warehouse_id": 1,
+//                 "to_warehouse_id": 2,
+//                 "stock_type_id": 1,
+//                 "description": "Stock added for Brake Fluid",
+//                 "quantity": 20,
+//                 "created_by": 1,
+//                 "is_deleted": 0,
+//                 "created_at": "2026-01-24T11:30:00.000000Z",
+//                 "updated_at": "2026-01-24T11:30:00.000000Z",
+//                 "from_warehouse": {
+//                     "warehouse_id": 1,
+//                     "warehouse_name": "Main Warehouse"
+//                 },
+//                 "to_warehouse": {
+//                     "warehouse_id": 2,
+//                     "warehouse_name": "Secondary Warehouse"
+//                 },
+//                 "stock_type": {
+//                     "stock_type_id": 1,
+//                     "stock_type_name": "Stock In"
+//                 },
+//                 "stock_details": [
+//                     {
+//                         "stock_id": 3,
+//                         "item_id": 3,
+//                         "quantity": 20,
+//                         "item_cost": "11.00",
+//                         "expire_date": "2026-03-15",
+//                         "is_deleted": 0,
+//                         "created_at": "2026-01-24T11:30:00.000000Z",
+//                         "updated_at": "2026-01-24T11:30:00.000000Z",
+//                         "item": {
+//                             "item_id": 3,
+//                             "category_id": 2,
+//                             "brand_id": 2,
+//                             "item_name": "Brake Fluid",
+//                             "item_code": "202601246594",
+//                             "unit_price": "8.50",
+//                             "item_cost": "0.00",
+//                             "discount": "0.00",
+//                             "description": "DOT3 brake fluid",
+//                             "created_by": 1,
+//                             "is_deleted": 0,
+//                             "created_at": "2026-01-24T09:59:00.000000Z",
+//                             "updated_at": "2026-01-24T09:59:00.000000Z"
+//                         }
+//                     }
+//                 ]
+//             },
+//             {
+//                 "stock_id": 4,
+//                 "from_warehouse_id": 2,
+//                 "to_warehouse_id": 2,
+//                 "stock_type_id": 1,
+//                 "description": "Stock added for Hydraulic Oil",
+//                 "quantity": 12,
+//                 "created_by": 1,
+//                 "is_deleted": 0,
+//                 "created_at": "2026-01-24T12:00:00.000000Z",
+//                 "updated_at": "2026-01-24T12:00:00.000000Z",
+//                 "from_warehouse": {
+//                     "warehouse_id": 2,
+//                     "warehouse_name": "Secondary Warehouse"
+//                 },
+//                 "to_warehouse": {
+//                     "warehouse_id": 2,
+//                     "warehouse_name": "Secondary Warehouse"
+//                 },
+//                 "stock_type": {
+//                     "stock_type_id": 1,
+//                     "stock_type_name": "Stock In"
+//                 },
+//                 "stock_details": [
+//                     {
+//                         "stock_id": 4,
+//                         "item_id": 4,
+//                         "quantity": 12,
+//                         "item_cost": "15.00",
+//                         "expire_date": "2026-02-28",
+//                         "is_deleted": 0,
+//                         "created_at": "2026-01-24T12:00:00.000000Z",
+//                         "updated_at": "2026-01-24T12:00:00.000000Z",
+//                         "item": {
+//                             "item_id": 4,
+//                             "category_id": 1,
+//                             "brand_id": 3,
+//                             "item_name": "Hydraulic Oil",
+//                             "item_code": "202601246595",
+//                             "unit_price": "18.00",
+//                             "item_cost": "0.00",
+//                             "discount": "2.00",
+//                             "description": "Industrial hydraulic oil",
+//                             "created_by": 1,
+//                             "is_deleted": 0,
+//                             "created_at": "2026-01-24T10:00:00.000000Z",
+//                             "updated_at": "2026-01-24T10:00:00.000000Z"
+//                         }
+//                     }
+//                 ]
+//             }
+//         ]
+//     }
+// }
 
 
 const InventoryList = () => {
@@ -235,16 +235,16 @@ const InventoryList = () => {
     const [delId, setDelId] = useState(false);
     const alert = useAlert();
 
-    // const { data: stocks, isPending } = useQuery({
-    //     queryKey: ['stocks', page, searchTerm],
-    //     queryFn: async () => {
-    //         const res = await api.get(`stocks?page=${page}&search=${searchTerm}&limit=10`, {
-    //             headers: { Authorization: `Bearer ${token}` }
-    //         });
-    //         return res.data.data;
-    //     }
-    // });
-    const stocks = stock.data;
+    const { data: stocks, isPending } = useQuery({
+        queryKey: ['stocks', page, searchTerm],
+        queryFn: async () => {
+            const res = await api.get(`stocks?page=${page}&search=${searchTerm}&limit=10`, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            return res.data.data;
+        }
+    });
+    // const stocks = stock.data;
 
 
     const delStockApi = async (id) => {

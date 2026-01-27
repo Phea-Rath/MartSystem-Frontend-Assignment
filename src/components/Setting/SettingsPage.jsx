@@ -184,7 +184,7 @@ const SettingsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 dark:from-gray-900 to-blue-50 dark:to-gray-800 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-transparent py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8 text-center">
@@ -443,8 +443,8 @@ const SettingsPage = () => {
                   <button
                     onClick={() => handleSettingChange('appearance', 'theme', 'light')}
                     className={`p-3 rounded-lg border-2 transition-all ${settings.appearance.theme === 'light'
-                        ? 'border-blue-500 dark:border-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                        : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+                      ? 'border-blue-500 dark:border-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                      : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
                       }`}
                   >
                     <FaSun className="w-5 h-5 text-yellow-500" />
@@ -452,8 +452,8 @@ const SettingsPage = () => {
                   <button
                     onClick={() => handleSettingChange('appearance', 'theme', 'dark')}
                     className={`p-3 rounded-lg border-2 transition-all ${settings.appearance.theme === 'dark'
-                        ? 'border-blue-500 dark:border-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                        : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
+                      ? 'border-blue-500 dark:border-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                      : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
                       }`}
                   >
                     <FaMoon className="w-5 h-5 text-gray-700 dark:text-yellow-400" />

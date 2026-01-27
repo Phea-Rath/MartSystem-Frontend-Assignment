@@ -5,7 +5,7 @@ import {
     FaFilter, FaTimes, FaCheckCircle, FaUserAlt
 } from 'react-icons/fa';
 import api from '../../services/api';
-import { ImQrcode } from "react-icons/im";
+import { ImList, ImQrcode } from "react-icons/im";
 import { useNavigate } from 'react-router';
 
 const items = {
@@ -16,200 +16,240 @@ const items = {
         "data": [
             {
                 "item_id": 1,
-                "item_name": "Tex Oil",
-                "item_code": "202601246592",
-                "in_stock_qty": 8,
+                "item_name": "Coca Cola Can",
+                "item_code": "MM20260001",
+                "in_stock_qty": 25,
                 "attributes": [
                     {
                         "attr_name": "size",
-                        "attr_values": ["xl"]
+                        "attr_values": ["330ml"]
                     }
                 ],
                 "images": [
                     {
                         "image_id": 1,
-                        "image_name": "oil-1.png",
-                        "image_url": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0"
+                        "image_name": "coke.jpg",
+                        "image_url": "https://images.unsplash.com/photo-1580910051074-3eb694886505"
                     }
                 ]
             },
             {
                 "item_id": 2,
-                "item_name": "Engine Oil Pro",
-                "item_code": "202601246593",
-                "in_stock_qty": 15,
+                "item_name": "Pepsi Bottle",
+                "item_code": "MM20260002",
+                "in_stock_qty": 18,
                 "attributes": [
                     {
                         "attr_name": "size",
-                        "attr_values": ["1L", "5L"]
+                        "attr_values": ["500ml"]
                     }
                 ],
                 "images": [
                     {
                         "image_id": 2,
-                        "image_name": "engine-oil.png",
-                        "image_url": "https://images.unsplash.com/photo-1615906655593-ad0386982a0f"
+                        "image_name": "pepsi.jpg",
+                        "image_url": "https://images.unsplash.com/photo-1613478223719-2ab802602423"
                     }
                 ]
             },
             {
                 "item_id": 3,
-                "item_name": "Brake Fluid",
-                "item_code": "202601246594",
-                "in_stock_qty": 20,
+                "item_name": "Mineral Water",
+                "item_code": "MM20260003",
+                "in_stock_qty": 40,
                 "attributes": [
                     {
-                        "attr_name": "type",
-                        "attr_values": ["DOT3"]
+                        "attr_name": "size",
+                        "attr_values": ["600ml"]
                     }
                 ],
                 "images": [
                     {
                         "image_id": 3,
-                        "image_name": "brake-fluid.png",
-                        "image_url": "https://images.unsplash.com/photo-1600359756098-8bc8f07d94e5"
+                        "image_name": "water.jpg",
+                        "image_url": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d"
                     }
                 ]
             },
             {
                 "item_id": 4,
-                "item_name": "Hydraulic Oil",
-                "item_code": "202601246595",
-                "in_stock_qty": 12,
+                "item_name": "Lay's Potato Chips",
+                "item_code": "MM20260004",
+                "in_stock_qty": 15,
                 "attributes": [
                     {
-                        "attr_name": "grade",
-                        "attr_values": ["ISO 46"]
+                        "attr_name": "flavor",
+                        "attr_values": ["Original"]
                     }
                 ],
                 "images": [
                     {
                         "image_id": 4,
-                        "image_name": "hydraulic.png",
-                        "image_url": "https://images.unsplash.com/photo-1586864387789-628af9feed72"
+                        "image_name": "chips.jpg",
+                        "image_url": "https://images.unsplash.com/photo-1585238342028-4bbc9c6d1c08"
                     }
                 ]
             },
             {
                 "item_id": 5,
-                "item_name": "Coolant Liquid",
-                "item_code": "202601246596",
-                "in_stock_qty": 30,
+                "item_name": "Oreo Cookies",
+                "item_code": "MM20260005",
+                "in_stock_qty": 20,
                 "attributes": [
                     {
-                        "attr_name": "color",
-                        "attr_values": ["green"]
+                        "attr_name": "pack",
+                        "attr_values": ["12 pcs"]
                     }
                 ],
                 "images": [
                     {
                         "image_id": 5,
-                        "image_name": "coolant.png",
-                        "image_url": "https://images.unsplash.com/photo-1621947081720-86970823b77a"
+                        "image_name": "oreo.jpg",
+                        "image_url": "https://images.unsplash.com/photo-1599785209798-7e6a6c5b09b8"
                     }
                 ]
             },
             {
                 "item_id": 6,
-                "item_name": "Gear Oil",
-                "item_code": "202601246597",
-                "in_stock_qty": 9,
+                "item_name": "Instant Noodles",
+                "item_code": "MM20260006",
+                "in_stock_qty": 50,
                 "attributes": [
                     {
-                        "attr_name": "viscosity",
-                        "attr_values": ["75W-90"]
+                        "attr_name": "flavor",
+                        "attr_values": ["Chicken"]
                     }
                 ],
                 "images": [
                     {
                         "image_id": 6,
-                        "image_name": "gear-oil.png",
-                        "image_url": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7"
+                        "image_name": "noodles.jpg",
+                        "image_url": "https://images.unsplash.com/photo-1604909053197-5c2c2b3d5e2d"
                     }
                 ]
             },
             {
                 "item_id": 7,
-                "item_name": "Power Steering Oil",
-                "item_code": "202601246598",
-                "in_stock_qty": 18,
+                "item_name": "Fresh Milk",
+                "item_code": "MM20260007",
+                "in_stock_qty": 12,
                 "attributes": [
                     {
-                        "attr_name": "type",
-                        "attr_values": ["ATF"]
+                        "attr_name": "fat",
+                        "attr_values": ["Full Cream"]
                     }
                 ],
                 "images": [
                     {
                         "image_id": 7,
-                        "image_name": "steering.png",
-                        "image_url": "https://images.unsplash.com/photo-1597764699513-9b6b80b0f1d6"
+                        "image_name": "milk.jpg",
+                        "image_url": "https://images.unsplash.com/photo-1580910051074-1c4c2b78b6c2"
                     }
                 ]
             },
             {
                 "item_id": 8,
-                "item_name": "Transmission Oil",
-                "item_code": "202601246599",
-                "in_stock_qty": 6,
+                "item_name": "White Bread",
+                "item_code": "MM20260008",
+                "in_stock_qty": 10,
                 "attributes": [
                     {
-                        "attr_name": "type",
-                        "attr_values": ["Automatic"]
+                        "attr_name": "weight",
+                        "attr_values": ["400g"]
                     }
                 ],
                 "images": [
                     {
                         "image_id": 8,
-                        "image_name": "transmission.png",
-                        "image_url": "https://images.unsplash.com/photo-1558981806-ec527fa84c39"
+                        "image_name": "bread.jpg",
+                        "image_url": "https://images.unsplash.com/photo-1608198093002-ad4e005484ec"
                     }
                 ]
             },
             {
                 "item_id": 9,
-                "item_name": "Industrial Lubricant",
-                "item_code": "202601246600",
-                "in_stock_qty": 22,
+                "item_name": "Jasmine Rice",
+                "item_code": "MM20260009",
+                "in_stock_qty": 6,
                 "attributes": [
                     {
-                        "attr_name": "usage",
-                        "attr_values": ["factory"]
+                        "attr_name": "weight",
+                        "attr_values": ["5kg"]
                     }
                 ],
                 "images": [
                     {
                         "image_id": 9,
-                        "image_name": "lubricant.png",
-                        "image_url": "https://images.unsplash.com/photo-1581090700227-1e37b190418e"
+                        "image_name": "rice.jpg",
+                        "image_url": "https://images.unsplash.com/photo-1604335399105-4ec7a6b2d6c5"
                     }
                 ]
             },
             {
                 "item_id": 10,
-                "item_name": "Synthetic Oil X",
-                "item_code": "202601246601",
+                "item_name": "Cooking Oil",
+                "item_code": "MM20260010",
                 "in_stock_qty": 14,
                 "attributes": [
                     {
-                        "attr_name": "grade",
-                        "attr_values": ["5W-30"]
+                        "attr_name": "volume",
+                        "attr_values": ["1L"]
                     }
                 ],
                 "images": [
                     {
                         "image_id": 10,
-                        "image_name": "synthetic.png",
-                        "image_url": "https://images.unsplash.com/photo-1581092919534-1ec5c6b9d36b"
+                        "image_name": "oil.jpg",
+                        "image_url": "https://images.unsplash.com/photo-1620807773206-49c1f2957417"
                     }
                 ]
             }
         ],
+        "first_page_url": "http://127.0.0.1:8000/api/sale-items?page=1",
+        "from": 1,
+        "last_page": 2,
+        "last_page_url": "http://127.0.0.1:8000/api/sale-items?page=2",
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "page": null,
+                "active": false
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/sale-items?page=1",
+                "label": "1",
+                "page": 1,
+                "active": true
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/sale-items?page=2",
+                "label": "2",
+                "page": 2,
+                "active": false
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/sale-items?page=2",
+                "label": "Next &raquo;",
+                "page": 2,
+                "active": false
+            }
+        ],
+        "next_page_url": "http://127.0.0.1:8000/api/sale-items?page=2",
+        "path": "http://127.0.0.1:8000/api/sale-items",
         "per_page": 10,
-        "total": 10,
-        "last_page": 1
-    }
+        "prev_page_url": null,
+        "to": 10,
+        "total": 20
+    },
+    "current_page": 1,
+    "per_page": 10,
+    "total": 20,
+    "last_page": 2,
+    "from": 1,
+    "to": 10
 }
+
 
 
 const SalePage = () => {
@@ -314,22 +354,27 @@ const SalePage = () => {
                 <div className="mb-6 space-y-4">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                         <h1 className="text-2xl font-black uppercase tracking-tight text-gray-900 dark:text-white">Point of Sale</h1>
-                        <div><ImQrcode onClick={() => navigater('/market')} className=' cursor-pointer' /></div>
-                        <button
-                            onClick={() => setIsCartOpen(true)}
-                            className="lg:hidden relative p-3 bg-indigo-600 hover:bg-indigo-700 rounded-full shadow-lg transition-colors"
-                        >
-                            <FaShoppingCart size={20} className="text-white" />
-                            {cart.length > 0 && (
-                                <span className="absolute -top-1 -right-1 bg-red-500 text-[10px] w-5 h-5 flex items-center justify-center rounded-full border-2 border-white font-bold">
-                                    {cart.length}
-                                </span>
-                            )}
-                        </button>
+                        <div className='flex items-center justify-between w-full md:w-auto gap-3'>
+                            <div className='flex'>
+                                <ImQrcode title='Market' onClick={() => navigater('/market')} className=' cursor-pointer' />
+                                <ImList title='Order List' onClick={() => navigater('/orders')} className=' ml-4 cursor-pointer' />
+                            </div>
+                            <button
+                                onClick={() => setIsCartOpen(true)}
+                                className="xl:hidden relative p-3 bg-indigo-600 hover:bg-indigo-700 rounded-full shadow-lg transition-colors"
+                            >
+                                <FaShoppingCart size={20} className="text-white" />
+                                {cart.length > 0 && (
+                                    <span className="absolute -top-1 -right-1 bg-red-500 text-[10px] w-5 h-5 flex items-center justify-center rounded-full border-2 border-white font-bold">
+                                        {cart.length}
+                                    </span>
+                                )}
+                            </button>
+                        </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                        <div className="relative col-span-1 sm:col-span-2">
+                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-3">
+                        <div className="relative col-span-1 lg:col-span-2">
                             <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400" />
                             <input
                                 type="text" placeholder="Search by name or code..."
@@ -337,20 +382,22 @@ const SalePage = () => {
                                 value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
                             />
                         </div>
-                        <select
-                            className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400"
-                            onChange={(e) => setCategory(e.target.value)}
-                        >
-                            <option value="">All Categories</option>
-                            <option value="1">Category 1</option>
-                        </select>
-                        <select
-                            className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400"
-                            onChange={(e) => setBrand(e.target.value)}
-                        >
-                            <option value="">All Brands</option>
-                            <option value="1">Brand 1</option>
-                        </select>
+                        <div className="flex gap-3 justify-between lg:col-span-2 md:justify-end">
+                            <select
+                                className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400"
+                                onChange={(e) => setCategory(e.target.value)}
+                            >
+                                <option value="">All Categories</option>
+                                <option value="1">Category 1</option>
+                            </select>
+                            <select
+                                className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400"
+                                onChange={(e) => setBrand(e.target.value)}
+                            >
+                                <option value="">All Brands</option>
+                                <option value="1">Brand 1</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
@@ -391,7 +438,7 @@ const SalePage = () => {
 
             {/* Shopping Cart Drawer (Sidebar on LG, Slide-over on mobile) */}
             <div className={`
-                fixed inset-y-0 right-0 z-50 w-full sm:w-[400px] bg-white dark:bg-gray-800 shadow-md transform transition-transform duration-300 lg:static lg:translate-x-0
+                fixed inset-y-0 right-0 z-50 w-full sm:w-[400px] bg-white dark:bg-gray-800 shadow-md transform transition-transform duration-300 xl:static xl:translate-x-0
                 ${isCartOpen ? 'translate-x-0' : 'translate-x-full'}
                 flex flex-col border-l border-gray-200 dark:border-gray-700
             `}>
@@ -399,7 +446,7 @@ const SalePage = () => {
                     <h2 className="font-black text-gray-800 dark:text-white flex items-center gap-2">
                         <FaShoppingCart className="text-indigo-600 dark:text-indigo-400" /> CART ({cart.length})
                     </h2>
-                    <button onClick={() => setIsCartOpen(false)} className="lg:hidden p-2 text-gray-400 dark:text-gray-500 hover:text-red-500 dark:hover:text-red-400 transition-colors">
+                    <button onClick={() => setIsCartOpen(false)} className="xl:hidden p-2 text-gray-400 dark:text-gray-500 hover:text-red-500 dark:hover:text-red-400 transition-colors">
                         <FaTimes size={20} />
                     </button>
                 </div>

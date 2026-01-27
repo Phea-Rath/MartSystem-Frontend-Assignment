@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { RiArrowDropDownLine, RiMenuFoldFill } from "react-icons/ri";
 import { Link, NavLink, useNavigate } from "react-router";
-import logo from '../assets/Artboard2.png';
+import logo from '../assets/logo.png';
 const SideBar = ({ isShow, onChange }) => {
     const [resizeProduct, setResizeProduct] = useState(false);
     const sidebarRef = useRef();
@@ -25,8 +25,8 @@ const SideBar = ({ isShow, onChange }) => {
         <section ref={sidebarRef} className={`${isShow ? 'w-[250px]' : 'w-[0px]'} bg-gray-50 fixed md:block  z-[9999] h-[100vh] md:h-full dark:bg-gray-700 dark:text-gray-200 transition-all drop-shadow-2xl duration-200 overflow-hidden`}>
             <article className=" px-3 flex items-center">
                 <div><img className="w-20 h-20" src={logo} alt="" /></div>
-                <h1>MOTORN</h1>
-                <RiMenuFoldFill onClick={onChange} className="text-xl cursor-pointer ml-auto md:hidden" />
+                <h1>MICRO MART</h1>
+                <RiMenuFoldFill onClick={onChange} className="text-xl cursor-pointer ml-auto lg:hidden" />
             </article>
             <div className=" bg-gray-300 dark:bg-gray-100 w-[200px] h-1 rounded-lg mx-auto my-5" />
             <article className="h-[calc(100vh-130px)] flex flex-col overflow-auto">
@@ -60,13 +60,13 @@ const SideBar = ({ isShow, onChange }) => {
                         <li onClick={handleNavigate} className="hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-black dark:hover:text-white p-2 rounded-tl-lg rounded-bl-lg font-bold">Roles</li>
                     </NavLink>
                     <NavLink to="/users">
-                        <li className="hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-black dark:hover:text-white p-2 rounded-tl-lg rounded-bl-lg font-bold">Users</li>
+                        <li onClick={handleNavigate} className="hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-black dark:hover:text-white p-2 rounded-tl-lg rounded-bl-lg font-bold">Users</li>
                     </NavLink>
                     <NavLink to="/suppliers">
                         <li onClick={handleNavigate} className="hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-black dark:hover:text-white p-2 rounded-tl-lg rounded-bl-lg font-bold">Suppliers</li>
                     </NavLink>
                     <NavLink to="/customers">
-                        <li className="hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-black dark:hover:text-white p-2 rounded-tl-lg rounded-bl-lg font-bold">Customers</li>
+                        <li onClick={handleNavigate} className="hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-black dark:hover:text-white p-2 rounded-tl-lg rounded-bl-lg font-bold">Customers</li>
                     </NavLink>
                     <NavLink to="/warehouses">
                         <li onClick={handleNavigate} className="hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-black dark:hover:text-white p-2 rounded-tl-lg rounded-bl-lg font-bold">Warehouses</li>
