@@ -10,7 +10,7 @@ import {
 import { useNavigate, useParams } from 'react-router';
 import api from '../../services/api';
 import AlertQuestionBox from '../../services/AlertQuestionBox';
-
+import items from '../../data/product';
 const item = {
     "success": true,
     "message": "Item list retrieved successfully",
@@ -135,7 +135,8 @@ const ProductViewPage = () => {
     //     queryFn: fetchProductById,
     //     enabled: !!id, // prevent run when id is undefined
     // });
-    const data = item.data.data[0]; // Remove this line when using real data fetching
+    const item = items.data.find(i=>i.item_id == id);
+    const data = item; // Remove this line when using real data fetching
 
     useEffect(() => {
         if (data) {
@@ -219,7 +220,7 @@ const ProductViewPage = () => {
 
                 {/* Left: Image Gallery */}
                 <div className="space-y-4">
-                    <div className="aspect-square bg-gray-100 dark:bg-gray-400 rounded-2xl overflow-hidden border border-gray-100 shadow-inner">
+                    <div className="aspect-square bg-gray-100 dark:bg-gray-200 rounded-2xl overflow-hidden border border-gray-100 shadow-inner">
                         {selectedImage ? (
                             <img
                                 src={selectedImage}

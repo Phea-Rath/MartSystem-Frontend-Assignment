@@ -7,248 +7,10 @@ import {
 import api from '../../services/api';
 import { ImList, ImQrcode } from "react-icons/im";
 import { useNavigate } from 'react-router';
+import categories from '../../data/category';
+import items from '../../data/product';
 
-const items = {
-    "success": true,
-    "message": "Item list retrieved successfully",
-    "data": {
-        "current_page": 1,
-        "data": [
-            {
-                "item_id": 1,
-                "item_name": "Coca Cola Can",
-                "item_code": "MM20260001",
-                "in_stock_qty": 25,
-                "attributes": [
-                    {
-                        "attr_name": "size",
-                        "attr_values": ["330ml"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 1,
-                        "image_name": "coke.jpg",
-                        "image_url": "https://images.unsplash.com/photo-1580910051074-3eb694886505"
-                    }
-                ]
-            },
-            {
-                "item_id": 2,
-                "item_name": "Pepsi Bottle",
-                "item_code": "MM20260002",
-                "in_stock_qty": 18,
-                "attributes": [
-                    {
-                        "attr_name": "size",
-                        "attr_values": ["500ml"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 2,
-                        "image_name": "pepsi.jpg",
-                        "image_url": "https://images.unsplash.com/photo-1613478223719-2ab802602423"
-                    }
-                ]
-            },
-            {
-                "item_id": 3,
-                "item_name": "Mineral Water",
-                "item_code": "MM20260003",
-                "in_stock_qty": 40,
-                "attributes": [
-                    {
-                        "attr_name": "size",
-                        "attr_values": ["600ml"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 3,
-                        "image_name": "water.jpg",
-                        "image_url": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d"
-                    }
-                ]
-            },
-            {
-                "item_id": 4,
-                "item_name": "Lay's Potato Chips",
-                "item_code": "MM20260004",
-                "in_stock_qty": 15,
-                "attributes": [
-                    {
-                        "attr_name": "flavor",
-                        "attr_values": ["Original"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 4,
-                        "image_name": "chips.jpg",
-                        "image_url": "https://images.unsplash.com/photo-1585238342028-4bbc9c6d1c08"
-                    }
-                ]
-            },
-            {
-                "item_id": 5,
-                "item_name": "Oreo Cookies",
-                "item_code": "MM20260005",
-                "in_stock_qty": 20,
-                "attributes": [
-                    {
-                        "attr_name": "pack",
-                        "attr_values": ["12 pcs"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 5,
-                        "image_name": "oreo.jpg",
-                        "image_url": "https://images.unsplash.com/photo-1599785209798-7e6a6c5b09b8"
-                    }
-                ]
-            },
-            {
-                "item_id": 6,
-                "item_name": "Instant Noodles",
-                "item_code": "MM20260006",
-                "in_stock_qty": 50,
-                "attributes": [
-                    {
-                        "attr_name": "flavor",
-                        "attr_values": ["Chicken"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 6,
-                        "image_name": "noodles.jpg",
-                        "image_url": "https://images.unsplash.com/photo-1604909053197-5c2c2b3d5e2d"
-                    }
-                ]
-            },
-            {
-                "item_id": 7,
-                "item_name": "Fresh Milk",
-                "item_code": "MM20260007",
-                "in_stock_qty": 12,
-                "attributes": [
-                    {
-                        "attr_name": "fat",
-                        "attr_values": ["Full Cream"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 7,
-                        "image_name": "milk.jpg",
-                        "image_url": "https://images.unsplash.com/photo-1580910051074-1c4c2b78b6c2"
-                    }
-                ]
-            },
-            {
-                "item_id": 8,
-                "item_name": "White Bread",
-                "item_code": "MM20260008",
-                "in_stock_qty": 10,
-                "attributes": [
-                    {
-                        "attr_name": "weight",
-                        "attr_values": ["400g"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 8,
-                        "image_name": "bread.jpg",
-                        "image_url": "https://images.unsplash.com/photo-1608198093002-ad4e005484ec"
-                    }
-                ]
-            },
-            {
-                "item_id": 9,
-                "item_name": "Jasmine Rice",
-                "item_code": "MM20260009",
-                "in_stock_qty": 6,
-                "attributes": [
-                    {
-                        "attr_name": "weight",
-                        "attr_values": ["5kg"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 9,
-                        "image_name": "rice.jpg",
-                        "image_url": "https://images.unsplash.com/photo-1604335399105-4ec7a6b2d6c5"
-                    }
-                ]
-            },
-            {
-                "item_id": 10,
-                "item_name": "Cooking Oil",
-                "item_code": "MM20260010",
-                "in_stock_qty": 14,
-                "attributes": [
-                    {
-                        "attr_name": "volume",
-                        "attr_values": ["1L"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 10,
-                        "image_name": "oil.jpg",
-                        "image_url": "https://images.unsplash.com/photo-1620807773206-49c1f2957417"
-                    }
-                ]
-            }
-        ],
-        "first_page_url": "http://127.0.0.1:8000/api/sale-items?page=1",
-        "from": 1,
-        "last_page": 2,
-        "last_page_url": "http://127.0.0.1:8000/api/sale-items?page=2",
-        "links": [
-            {
-                "url": null,
-                "label": "&laquo; Previous",
-                "page": null,
-                "active": false
-            },
-            {
-                "url": "http://127.0.0.1:8000/api/sale-items?page=1",
-                "label": "1",
-                "page": 1,
-                "active": true
-            },
-            {
-                "url": "http://127.0.0.1:8000/api/sale-items?page=2",
-                "label": "2",
-                "page": 2,
-                "active": false
-            },
-            {
-                "url": "http://127.0.0.1:8000/api/sale-items?page=2",
-                "label": "Next &raquo;",
-                "page": 2,
-                "active": false
-            }
-        ],
-        "next_page_url": "http://127.0.0.1:8000/api/sale-items?page=2",
-        "path": "http://127.0.0.1:8000/api/sale-items",
-        "per_page": 10,
-        "prev_page_url": null,
-        "to": 10,
-        "total": 20
-    },
-    "current_page": 1,
-    "per_page": 10,
-    "total": 20,
-    "last_page": 2,
-    "from": 1,
-    "to": 10
-}
+
 
 
 
@@ -260,6 +22,7 @@ const SalePage = () => {
     const [category, setCategory] = useState('');
     const [brand, setBrand] = useState('');
     const [page, setPage] = useState(1);
+    const [itemsData, setItemsData]= useState(items.data);
     const navigater = useNavigate();
 
     // POS Form State
@@ -275,7 +38,6 @@ const SalePage = () => {
     });
 
     const token = localStorage.getItem('token');
-    const itemsData = items.data;
     const isLoading = false; // Replace with actual loading state from data fetching
     // --- Data Fetching ---
     // const { data: itemsData, isLoading } = useQuery({
@@ -345,7 +107,18 @@ const SalePage = () => {
         };
         checkoutMutation.mutate(payload);
     };
+    // console.log(category);
+    
 
+    const handleCategory = (e)=>{
+        const item = items.data.filter(i=>i.category_id==e.target.value);
+        console.log(item);
+        
+        setItemsData(item);
+        if(e.target.value == ''){
+            setItemsData(items.data);
+        }
+    }
     return (
         <div className="flex flex-col h-full bg-transparent overflow-hidden dark:text-gray-200 lg:flex-row">
             {/* Main Content: Product List */}
@@ -385,10 +158,13 @@ const SalePage = () => {
                         <div className="flex gap-3 justify-between lg:col-span-2 md:justify-end">
                             <select
                                 className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400"
-                                onChange={(e) => setCategory(e.target.value)}
+                                onClick={handleCategory}
                             >
-                                <option value="">All Categories</option>
-                                <option value="1">Category 1</option>
+                                <option value=''>All Categories</option>
+                                {categories.data.data.map(c=>
+
+                                <option value={c.category_id}>{c.category_name}</option>
+                                )}
                             </select>
                             <select
                                 className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400"
@@ -409,7 +185,7 @@ const SalePage = () => {
                         </div>
                     ) : (
                         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
-                            {itemsData?.data?.map((item) => (
+                            {itemsData?.map((item) => (
                                 <div
                                     key={item.item_id}
                                     onClick={() => addToCart(item)}
