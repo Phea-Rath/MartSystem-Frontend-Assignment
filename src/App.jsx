@@ -29,6 +29,9 @@ import MarketSalePage from './components/markets/MarketPage';
 import OrderListPage from './components/orders/OrderList';
 import OrderDetails from './components/orders/OrderDetail';
 import OrderUpdate from './components/orders/OrderUpdate';
+import ProfileDetail from './components/users/ProfileDetail';
+import Index from './components/markets/Index';
+import ProductView from './components/markets/ProductView';
 
 const routers = createBrowserRouter([
   {
@@ -57,6 +60,10 @@ const routers = createBrowserRouter([
       {
         path: '/users/edit/:id',
         element: <UserForm />
+      },
+      {
+        path: '/profile',
+        element: <ProfileDetail />
       },
 
       //Categories
@@ -176,7 +183,18 @@ const routers = createBrowserRouter([
   },
   {
     path: '/market',
-    element: <MarketSalePage />
+    element: <MarketSalePage />,
+    children: [
+      {
+        path: '',
+        index: 1,
+        element: <Index />
+      },
+      {
+        path: 'product/view/:id',
+        element: <ProductView />
+      }
+    ]
   },
   {
     path: '/logout',

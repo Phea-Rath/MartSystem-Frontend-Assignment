@@ -25,7 +25,7 @@ const PurchaseForm = () => {
 
     const [totals, setTotals] = useState({ subtotal: 0, grandTotal: 0, balance: 0 });
 
-    const fetchProductById = async ({ queryKey }) => {
+    const fetchPurchaseById = async ({ queryKey }) => {
         const [, id] = queryKey; // ['products', id]
 
         const res = await api.get(`purchases/${id}`, {
@@ -41,7 +41,7 @@ const PurchaseForm = () => {
         data: editData,
     } = useQuery({
         queryKey: ['purchase', id],
-        queryFn: fetchProductById,
+        queryFn: fetchPurchaseById,
         enabled: !!id, // prevent run when id is undefined
     });
 

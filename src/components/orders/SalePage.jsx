@@ -22,7 +22,7 @@ const SalePage = () => {
     const [category, setCategory] = useState('');
     const [brand, setBrand] = useState('');
     const [page, setPage] = useState(1);
-    const [itemsData, setItemsData]= useState(items.data);
+    const [itemsData, setItemsData] = useState(items.data);
     const navigater = useNavigate();
 
     // POS Form State
@@ -108,14 +108,14 @@ const SalePage = () => {
         checkoutMutation.mutate(payload);
     };
     // console.log(category);
-    
 
-    const handleCategory = (e)=>{
-        const item = items.data.filter(i=>i.category_id==e.target.value);
+
+    const handleCategory = (e) => {
+        const item = items.data.filter(i => i.category_id == e.target.value);
         console.log(item);
-        
+
         setItemsData(item);
-        if(e.target.value == ''){
+        if (e.target.value == '') {
             setItemsData(items.data);
         }
     }
@@ -161,9 +161,9 @@ const SalePage = () => {
                                 onClick={handleCategory}
                             >
                                 <option value=''>All Categories</option>
-                                {categories.data.data.map(c=>
+                                {categories.data.data.map(c =>
 
-                                <option value={c.category_id}>{c.category_name}</option>
+                                    <option value={c.category_id}>{c.category_name}</option>
                                 )}
                             </select>
                             <select

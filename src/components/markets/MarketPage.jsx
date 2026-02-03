@@ -7,220 +7,22 @@ import {
 } from 'react-icons/fa';
 import api from '../../services/api';
 import { MdDarkMode, MdSunnySnowing } from 'react-icons/md';
+import items from '../../data/product'
+import { Outlet, useNavigate } from 'react-router';
 
-const items = {
-    "success": true,
-    "message": "Item list retrieved successfully",
-    "data": {
-        "current_page": 1,
-        "data": [
-            {
-                "item_id": 1,
-                "item_name": "Tex Oil",
-                "item_code": "202601246592",
-                "in_stock_qty": 8,
-                "attributes": [
-                    {
-                        "attr_name": "size",
-                        "attr_values": ["xl"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 1,
-                        "image_name": "oil-1.png",
-                        "image_url": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0"
-                    }
-                ]
-            },
-            {
-                "item_id": 2,
-                "item_name": "Engine Oil Pro",
-                "item_code": "202601246593",
-                "in_stock_qty": 15,
-                "attributes": [
-                    {
-                        "attr_name": "size",
-                        "attr_values": ["1L", "5L"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 2,
-                        "image_name": "engine-oil.png",
-                        "image_url": "https://images.unsplash.com/photo-1615906655593-ad0386982a0f"
-                    }
-                ]
-            },
-            {
-                "item_id": 3,
-                "item_name": "Brake Fluid",
-                "item_code": "202601246594",
-                "in_stock_qty": 20,
-                "attributes": [
-                    {
-                        "attr_name": "type",
-                        "attr_values": ["DOT3"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 3,
-                        "image_name": "brake-fluid.png",
-                        "image_url": "https://images.unsplash.com/photo-1600359756098-8bc8f07d94e5"
-                    }
-                ]
-            },
-            {
-                "item_id": 4,
-                "item_name": "Hydraulic Oil",
-                "item_code": "202601246595",
-                "in_stock_qty": 12,
-                "attributes": [
-                    {
-                        "attr_name": "grade",
-                        "attr_values": ["ISO 46"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 4,
-                        "image_name": "hydraulic.png",
-                        "image_url": "https://images.unsplash.com/photo-1586864387789-628af9feed72"
-                    }
-                ]
-            },
-            {
-                "item_id": 5,
-                "item_name": "Coolant Liquid",
-                "item_code": "202601246596",
-                "in_stock_qty": 30,
-                "attributes": [
-                    {
-                        "attr_name": "color",
-                        "attr_values": ["green"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 5,
-                        "image_name": "coolant.png",
-                        "image_url": "https://images.unsplash.com/photo-1621947081720-86970823b77a"
-                    }
-                ]
-            },
-            {
-                "item_id": 6,
-                "item_name": "Gear Oil",
-                "item_code": "202601246597",
-                "in_stock_qty": 9,
-                "attributes": [
-                    {
-                        "attr_name": "viscosity",
-                        "attr_values": ["75W-90"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 6,
-                        "image_name": "gear-oil.png",
-                        "image_url": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7"
-                    }
-                ]
-            },
-            {
-                "item_id": 7,
-                "item_name": "Power Steering Oil",
-                "item_code": "202601246598",
-                "in_stock_qty": 18,
-                "attributes": [
-                    {
-                        "attr_name": "type",
-                        "attr_values": ["ATF"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 7,
-                        "image_name": "steering.png",
-                        "image_url": "https://images.unsplash.com/photo-1597764699513-9b6b80b0f1d6"
-                    }
-                ]
-            },
-            {
-                "item_id": 8,
-                "item_name": "Transmission Oil",
-                "item_code": "202601246599",
-                "in_stock_qty": 6,
-                "attributes": [
-                    {
-                        "attr_name": "type",
-                        "attr_values": ["Automatic"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 8,
-                        "image_name": "transmission.png",
-                        "image_url": "https://images.unsplash.com/photo-1558981806-ec527fa84c39"
-                    }
-                ]
-            },
-            {
-                "item_id": 9,
-                "item_name": "Industrial Lubricant",
-                "item_code": "202601246600",
-                "in_stock_qty": 22,
-                "attributes": [
-                    {
-                        "attr_name": "usage",
-                        "attr_values": ["factory"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 9,
-                        "image_name": "lubricant.png",
-                        "image_url": "https://images.unsplash.com/photo-1581090700227-1e37b190418e"
-                    }
-                ]
-            },
-            {
-                "item_id": 10,
-                "item_name": "Synthetic Oil X",
-                "item_code": "202601246601",
-                "in_stock_qty": 14,
-                "attributes": [
-                    {
-                        "attr_name": "grade",
-                        "attr_values": ["5W-30"]
-                    }
-                ],
-                "images": [
-                    {
-                        "image_id": 10,
-                        "image_name": "synthetic.png",
-                        "image_url": "https://images.unsplash.com/photo-1581092919534-1ec5c6b9d36b"
-                    }
-                ]
-            }
-        ],
-        "per_page": 10,
-        "total": 10,
-        "last_page": 1
-    }
-}
+
 const MarketSalePage = () => {
     // --- 1. Carousel & UI State ---
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    const navigater = useNavigate();
     const [activeCategory, setActiveCategory] = useState('All');
 
     const posters = [
-        { id: 1, title: "Grand Opening", discount: "20% Cashback", bg: "bg-gradient-to-r from-indigo-600 to-blue-500", image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1000" },
-        { id: 2, title: "Flash Sale", discount: "Ends in 2h", bg: "bg-gradient-to-r from-rose-600 to-orange-500", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000" },
-        { id: 3, title: "New Season", discount: "Explore Now", bg: "bg-gradient-to-r from-emerald-600 to-teal-500", image: "https://images.unsplash.com/photo-1544117518-2b476bc11faf?q=80&w=1000" },
+        { id: 1, title: "Grand Opening", discount: "20% Cashback", bg: "bg-gradient-to-r from-indigo-600 to-blue-500/0", image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1000" },
+        { id: 2, title: "Flash Sale", discount: "Ends in 2h", bg: "bg-gradient-to-r from-rose-600 to-orange-500/0", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000" },
+        { id: 3, title: "New Season", discount: "Explore Now", bg: "bg-gradient-to-r from-emerald-600 to-teal-500/0", image: "https://di-uploads-pod41.dealerinspire.com/performancefordbountiful/uploads/2023/09/PerF-Valet_Mobile-Ford-1900x200-1.png" },
     ];
 
     // --- 2. Cart & Form State ---
@@ -256,7 +58,7 @@ const MarketSalePage = () => {
     //         return res.data.data;
     //     }
     // });
-    const itemsData = items.data;
+    const itemsData = items;
     const isLoading = false;
 
     // --- 4. Cart Operations ---
@@ -341,8 +143,8 @@ const MarketSalePage = () => {
             <main className="flex-1 flex flex-col overflow-hidden">
 
                 {/* Search Header */}
-                <header className="p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 flex items-center justify-between gap-4 sticky top-0 z-30">
-                    <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400">
+                <header className="p-4 bg-white dark:bg-gray-800 border-b border-gray-200 drop-shadow-lg dark:border-gray-700 flex items-center justify-between gap-4 sticky top-0 z-30">
+                    <div onClick={() => navigater('/market')} className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400">
                         <FaStore size={24} />
                         <h1 className="text-xl font-black italic hidden sm:block">MARKET.PRO</h1>
                     </div>
@@ -356,7 +158,7 @@ const MarketSalePage = () => {
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
                     </div>
-                    {mode === 'dark' ? <MdSunnySnowing onClick={darkmode} /> :
+                    {mode === 'dark' ? <MdSunnySnowing onClick={darkmode} className='dark:text-white' /> :
                         <MdDarkMode onClick={darkmode} />}
                     <button
                         onClick={() => setIsCartOpen(true)}
@@ -368,91 +170,7 @@ const MarketSalePage = () => {
                 </header>
 
                 <div className="flex-1 overflow-y-auto p-4 lg:p-6 space-y-6 custom-scrollbar">
-
-                    {/* Poster Carousel */}
-                    <section className="relative group overflow-hidden rounded-[2.5rem] h-48 md:h-72 shadow-2xl">
-                        <div className="flex h-full transition-transform duration-1000 cubic-bezier(0.4, 0, 0.2, 1)" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-                            {posters.map((poster) => (
-                                <div key={poster.id} className={`min-w-full h-full relative ${poster.bg}`}>
-                                    <img src={poster.image} alt={poster.title} className="w-full h-full object-cover mix-blend-overlay opacity-40" />
-                                    <div className="absolute inset-0 flex flex-col justify-center px-12 text-white">
-                                        <div className="flex items-center gap-2 mb-2">
-                                            <span className="p-1 bg-white/20 backdrop-blur rounded text-[10px] font-black uppercase tracking-widest">{poster.discount}</span>
-                                        </div>
-                                        <h2 className="text-4xl md:text-5xl font-black mb-4">{poster.title}</h2>
-                                        <button className="px-8 py-3 bg-white text-gray-900 rounded-xl text-sm font-black w-fit hover:scale-105 transition-transform active:scale-95 shadow-lg">Grab Deals</button>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Progress Dots */}
-                        <div className="absolute bottom-6 left-12 flex gap-2">
-                            {posters.map((_, idx) => (
-                                <button
-                                    key={idx}
-                                    onClick={() => setCurrentSlide(idx)}
-                                    className={`h-1.5 rounded-full transition-all duration-500 ${currentSlide === idx ? 'w-10 bg-white' : 'w-2 bg-white/40'}`}
-                                />
-                            ))}
-                        </div>
-                    </section>
-
-                    {/* Category Selector */}
-                    <section className="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
-                        {['All', 'Beverage', 'Oil', 'Snacks', 'Pantry'].map((cat) => (
-                            <button
-                                key={cat}
-                                onClick={() => setActiveCategory(cat)}
-                                className={`px-6 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all border ${activeCategory === cat
-                                    ? 'bg-indigo-600 border-indigo-600 text-white shadow-md'
-                                    : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:border-indigo-300'
-                                    }`}
-                            >
-                                {cat}
-                            </button>
-                        ))}
-                    </section>
-
-                    {/* Product Grid */}
-                    <section>
-                        <h3 className="text-lg font-black text-gray-800 dark:text-gray-100 mb-6 flex items-center gap-2 uppercase tracking-tight">
-                            <FaTag className="text-rose-500 rotate-90" /> Recommended For You
-                        </h3>
-
-                        {isLoading ? (
-                            <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-6">
-                                {[...Array(8)].map((_, i) => <div key={i} className="h-64 bg-gray-200 animate-pulse rounded-[2.5rem]" />)}
-                            </div>
-                        ) : (
-                            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
-                                {itemsData?.data?.map((item) => (
-                                    <div
-                                        key={item.item_id}
-                                        className="bg-white dark:bg-gray-800 rounded-[2.5rem] p-4 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl transition-all duration-300 group"
-                                    >
-                                        <div className="relative aspect-square rounded-[2rem] overflow-hidden bg-gray-50 dark:bg-gray-700 mb-4">
-                                            <img src={item.images[0]?.image_url} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                            <div className="absolute top-3 left-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md px-2 py-1 rounded-lg text-[9px] font-black text-gray-600 dark:text-gray-300 border border-white dark:border-gray-600">
-                                                QTY: {item.in_stock_qty}
-                                            </div>
-                                            <button
-                                                onClick={() => addToCart(item)}
-                                                className="absolute bottom-3 right-3 p-4 bg-indigo-600 text-white rounded-2xl shadow-xl translate-y-20 group-hover:translate-y-0 transition-all duration-500 hover:bg-black"
-                                            >
-                                                <FaPlus />
-                                            </button>
-                                        </div>
-                                        <div className="px-2">
-                                            <h4 className="font-black text-gray-800 dark:text-gray-100 text-sm truncate uppercase tracking-tighter">{item.item_name}</h4>
-                                            <p className="text-[10px] text-gray-400 dark:text-gray-500 font-bold mb-2">#{item.item_code}</p>
-                                            <p className="text-indigo-600 dark:text-indigo-400 font-black text-lg">$10.00</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </section>
+                    <Outlet />
                 </div>
             </main>
 
@@ -469,7 +187,7 @@ const MarketSalePage = () => {
                         <h2 className="text-2xl font-black text-gray-800 dark:text-gray-100">My Basket</h2>
                         <p className="text-xs text-gray-400 dark:text-gray-500 font-bold uppercase">{cart.length} Items Selected</p>
                     </div>
-                    <button onClick={() => setIsCartOpen(false)} className="lg:hidden p-3 bg-white dark:bg-gray-700 rounded-full shadow-sm text-gray-400 dark:text-gray-500 hover:text-rose-500">
+                    <button onClick={() => setIsCartOpen(false)} className=" p-3 bg-white dark:bg-gray-700 rounded-full shadow-sm text-gray-400 dark:text-gray-500 hover:text-rose-500">
                         <FaTimes size={20} />
                     </button>
                 </div>

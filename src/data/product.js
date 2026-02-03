@@ -276,7 +276,7 @@ const items = {
         }
       ]
     },
-        {
+    {
       "item_id": 21,
       "item_code": "FM20260001",
       "item_name": "Instant Noodles (Cup)",
@@ -561,7 +561,7 @@ const items = {
         {
           "image_id": 52,
           "image_name": "dumplings.jpg",
-          "image_url": "https://www.cjfoods.com/images/dumplings.png"
+          "image_url": " https://tse1.mm.bing.net/th/id/OIP.ktDcWU5X-16rGB8pkRxs_AHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -583,7 +583,7 @@ const items = {
         {
           "image_id": 53,
           "image_name": "fish-balls.jpg",
-          "image_url": "https://www.fishball.com/images/fishball.png"
+          "image_url": " https://tse4.mm.bing.net/th/id/OIP.kh9EvztZ9gwZ848bSjgnAgHaJ4?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -605,7 +605,7 @@ const items = {
         {
           "image_id": 54,
           "image_name": "french-fries.jpg",
-          "image_url": "https://www.mccain.com/images/fries.png"
+          "image_url": "https://tse4.mm.bing.net/th/id/OIP.t9-p2f3dRIOi1DkbihyY5gHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -627,7 +627,7 @@ const items = {
         {
           "image_id": 55,
           "image_name": "frozen-sausage.jpg",
-          "image_url": "https://www.johnsonville.com/images/products/bratwurst.png"
+          "image_url": " https://tse3.mm.bing.net/th/id/OIP.isJSzNHd9E2aClDxeFvZlgHaFN?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -648,7 +648,7 @@ const items = {
         {
           "image_id": 56,
           "image_name": "tomato.jpg",
-          "image_url": "https://www.freshproduce.com/images/tomato.png"
+          "image_url": "https://th.bing.com/th/id/R.1e2c196fba58fcf6a8a11e7d45120706?rik=HuNyOXlEeVfa%2bQ&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f8%2f89%2fTomato_je.jpg&ehk=INz0rTsairT9VM9X%2fNP0Wy8mDxwUq20BpWFNSNvZzFo%3d&risl=&pid=ImgRaw&r=0"
         }
       ],
       "attributes": [
@@ -670,7 +670,7 @@ const items = {
         {
           "image_id": 57,
           "image_name": "cabbage.jpg",
-          "image_url": "https://www.freshproduce.com/images/cabbage.png"
+          "image_url": " https://th.bing.com/th/id/OIP.vFChF-1x4mzX85XmKTlLiAHaE7?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -692,7 +692,7 @@ const items = {
         {
           "image_id": 58,
           "image_name": "banana.jpg",
-          "image_url": "https://www.freshproduce.com/images/banana.png"
+          "image_url": " https://tse4.mm.bing.net/th/id/OIP.MOOBKpj6kftIvXSuJklCCQHaE9?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -714,7 +714,7 @@ const items = {
         {
           "image_id": 59,
           "image_name": "apple.jpg",
-          "image_url": "https://www.freshproduce.com/images/apple.png"
+          "image_url": " https://tse1.mm.bing.net/th/id/OIP.WDaBKXdl36W150PV4ObwLQHaHM?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -736,7 +736,7 @@ const items = {
         {
           "image_id": 60,
           "image_name": "orange.jpg",
-          "image_url": "https://www.freshproduce.com/images/orange.png"
+          "image_url": " https://th.bing.com/th/id/OIP.KbxOrNni8-UiA1o3JVQdXQHaFb?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -757,7 +757,7 @@ const items = {
         {
           "image_id": 61,
           "image_name": "pork.jpg",
-          "image_url": "https://www.meatmarket.com/images/pork.png"
+          "image_url": " https://tse4.mm.bing.net/th/id/OIP.jXGZFmsCJq9s9bECoOF8dQHaEJ?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -779,7 +779,7 @@ const items = {
         {
           "image_id": 62,
           "image_name": "chicken.jpg",
-          "image_url": "https://www.meatmarket.com/images/chicken.png"
+          "image_url": " https://tse2.mm.bing.net/th/id/OIP.QV9nLsosd2GuFfqmwBD7NAHaF0?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -801,7 +801,7 @@ const items = {
         {
           "image_id": 63,
           "image_name": "fish.jpg",
-          "image_url": "https://www.seafoodmarket.com/images/fish.png"
+          "image_url": " https://tse3.mm.bing.net/th/id/OIP.mQmCx4C2FTQ3su0mRQffHQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -823,7 +823,7 @@ const items = {
         {
           "image_id": 64,
           "image_name": "shrimp.jpg",
-          "image_url": "https://www.seafoodmarket.com/images/shrimp.png"
+          "image_url": " https://th.bing.com/th/id/OIP.WsCs0erKeB0J-Pe9j8PhawHaFW?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -845,7 +845,7 @@ const items = {
         {
           "image_id": 65,
           "image_name": "squid.jpg",
-          "image_url": "https://www.seafoodmarket.com/images/squid.png"
+          "image_url": " https://th.bing.com/th/id/R.0b27fcb77b500654db471395eac5e61a?rik=CRQIXp%2b%2fX%2fjHLA&riu=http%3a%2f%2fimages.wisegeek.com%2fthree-squid.jpg&ehk=NtUk3NzKXtryguNHuG60Nf6jr6iUJ3zCWNFUuRUdSxA%3d&risl=&pid=ImgRaw&r=0"
         }
       ],
       "attributes": [
@@ -866,7 +866,7 @@ const items = {
         {
           "image_id": 66,
           "image_name": "white-bread.jpg",
-          "image_url": "https://www.wonderbread.com/images/bread.png"
+          "image_url": " https://tse2.mm.bing.net/th/id/OIP.VwuGKlFQbMInUgjfXBmcmgHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -888,7 +888,7 @@ const items = {
         {
           "image_id": 67,
           "image_name": "wheat-bread.jpg",
-          "image_url": "https://www.wonderbread.com/images/wheat.png"
+          "image_url": " https://tse3.mm.bing.net/th/id/OIP.ZiiV8VZCuXcbREIArMqq4gHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -910,7 +910,7 @@ const items = {
         {
           "image_id": 68,
           "image_name": "cake.jpg",
-          "image_url": "https://www.cakeshop.com/images/cake.png"
+          "image_url": " https://tse1.mm.bing.net/th/id/OIP.t65oaD_Y7-n93Ylce2qOwQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -932,7 +932,7 @@ const items = {
         {
           "image_id": 69,
           "image_name": "croissant.jpg",
-          "image_url": "https://www.cakeshop.com/images/croissant.png"
+          "image_url": " https://th.bing.com/th/id/R.64e5613f6d2b1a595264ca85e1f3b991?rik=0WRBkExCBY%2bwJQ&pid=ImgRaw&r=0"
         }
       ],
       "attributes": [
@@ -954,7 +954,7 @@ const items = {
         {
           "image_id": 70,
           "image_name": "donut.jpg",
-          "image_url": "https://www.cakeshop.com/images/donut.png"
+          "image_url": " https://tse2.mm.bing.net/th/id/OIP.5jw_xIThV3j0DgEDbJSBJAHaF1?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -975,7 +975,7 @@ const items = {
         {
           "image_id": 71,
           "image_name": "soap.jpg",
-          "image_url": "https://www.dove.com/images/soap.png"
+          "image_url": " https://tse1.mm.bing.net/th/id/OIP.Fq-Gty0ZCEI0qCEcWI36qwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -997,7 +997,7 @@ const items = {
         {
           "image_id": 72,
           "image_name": "shampoo.jpg",
-          "image_url": "https://www.sunsilk.com/images/shampoo.png"
+          "image_url": " https://th.bing.com/th/id/R.4a67169ec69b460ac1cfaead5d713f74?rik=QgRzZi80yoiG4Q&pid=ImgRaw&r=0"
         }
       ],
       "attributes": [
@@ -1019,7 +1019,7 @@ const items = {
         {
           "image_id": 73,
           "image_name": "conditioner.jpg",
-          "image_url": "https://www.sunsilk.com/images/conditioner.png"
+          "image_url": " https://tse1.mm.bing.net/th/id/OIP.nAey0d43xJrSQmLFPScswQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -1041,7 +1041,7 @@ const items = {
         {
           "image_id": 74,
           "image_name": "toothpaste.jpg",
-          "image_url": "https://www.colgate.com/images/toothpaste.png"
+          "image_url": " https://th.bing.com/th/id/OIP.PPC2JFDtwg5nijNxNV76rgHaDt?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -1063,7 +1063,7 @@ const items = {
         {
           "image_id": 75,
           "image_name": "toothbrush.jpg",
-          "image_url": "https://www.colgate.com/images/toothbrush.png"
+          "image_url": " https://th.bing.com/th/id/OIP.Zoy0L7ank-xDFniBFdTjvAHaFj?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -1084,7 +1084,7 @@ const items = {
         {
           "image_id": 76,
           "image_name": "detergent.jpg",
-          "image_url": "https://www.ariel.com/images/detergent.png"
+          "image_url": " https://th.bing.com/th/id/OIP.tpCmL6B4zvjszf69WxDDfQHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -1106,7 +1106,7 @@ const items = {
         {
           "image_id": 77,
           "image_name": "dishwashing.jpg",
-          "image_url": "https://www.sunlight.com/images/dishwashing.png"
+          "image_url": " https://www.sunlight.co.za/images/h0nadbhvm6m4/5V9JXopXHIokre6oGF1ZaV/c24a95f4fb5fce82a8e48743efff5e37/U0RXTF83NTBtbF9ib3R0bGVfcGFja3Nob3QucG5n/1080w-1080h/sunlight-dishwashing-liquid.jpg "
         }
       ],
       "attributes": [
@@ -1128,7 +1128,7 @@ const items = {
         {
           "image_id": 78,
           "image_name": "floor-cleaner.jpg",
-          "image_url": "https://www.lysol.com/images/floor.png"
+          "image_url": " https://th.bing.com/th/id/OIP.g1AA3ZJurWdn8XHi8qIIgwHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -1150,7 +1150,7 @@ const items = {
         {
           "image_id": 79,
           "image_name": "trash-bags.jpg",
-          "image_url": "https://m.media-amazon.com/images/I/81Vn5IFvRSL.jpg"
+          "image_url": " https://tse2.mm.bing.net/th/id/OIP.22Z1XsYo97QTqZsVhIHTRAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
@@ -1172,13 +1172,14 @@ const items = {
         {
           "image_id": 80,
           "image_name": "tissue.jpg",
-          "image_url": "https://th.bing.com/th/id/OIP.nqlxRB2UTq5cYX3geLkLwQHaHa?w=196&h=197&c=7&r=0&o=7&pid=1.7&rm=3https://www.kleenex.com/images/tissue.png"
+          "image_url": " https://th.bing.com/th/id/OIP.nqlxRB2UTq5cYX3geLkLwQHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
         }
       ],
       "attributes": [
         { "attr_name": "pack", "attr_values": ["1 pack"] }
       ]
     }
+
 
 
   ]
